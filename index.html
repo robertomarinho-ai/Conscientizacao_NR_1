@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riscos Psicossociais NR-1</title>
+  <meta name="description" content="Conscientização sobre Riscos Psicossociais no trabalho conforme a NR-1 atualizada em 2025." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="reading-progress-bar"></div>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="#/" class="logo" aria-label="Página inicial">
+        <span class="logo-icon">🧠</span>
+        <span class="logo-text">NR-1 <span class="logo-accent">Psicossocial</span></span>
+      </a>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#/" class="nav-link" data-nav="home">Início</a>
+        <a href="#/explorer" class="nav-link" data-nav="explorer">Riscos</a>
+        <a href="#/quiz" class="nav-link" data-nav="quiz">Quiz</a>
+        <a href="#/avaliacao" class="nav-link" data-nav="avaliacao">Autoavaliação</a>
+      </nav>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Navegação mobile">
+      <a href="#/" class="nav-link" data-nav="home">Início</a>
+      <a href="#/explorer" class="nav-link" data-nav="explorer">Riscos</a>
+      <a href="#/quiz" class="nav-link" data-nav="quiz">Quiz</a>
+      <a href="#/avaliacao" class="nav-link" data-nav="avaliacao">Autoavaliação</a>
+    </nav>
+  </header>
+
+  <main id="app" role="main" aria-live="polite">
+    <!-- Dynamic content rendered here by app.js -->
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-text">
+        Desenvolvido para conscientização sobre a <strong>NR-1</strong> — Norma Regulamentadora nº 1 do Ministério do Trabalho e Emprego, atualizada em 2025 para incluir Riscos Psicossociais.
+      </p>
+      <p class="footer-disclaimer">
+        Este conteúdo é educativo. Para situações específicas, consulte o SESMT ou um profissional de saúde ocupacional.
+      </p>
+    </div>
+  </footer>
+
+  <div id="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+  <script src="app.js" defer></script>
+</body>
+</html>
