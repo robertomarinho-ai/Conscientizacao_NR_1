@@ -1,5 +1,5 @@
 /* ============================================================
-   NR-1 Riscos Psicossociais — app.js
+   NR-1 Riscos Psicossociais - app.js
    ============================================================ */
 
 // === DATA ===
@@ -28,10 +28,10 @@ const RISKS_DATA = [
 <li>Chantagem emocional: "Se você não fizer isso, vai prejudicar a equipe", "Depois não reclame se..."</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e qualquer conflito ou feedback negativo:</strong> uma avaliação de desempenho crítica, uma advertência formal por erro ou um desentendimento pontual não constituem assédio</li>
-<li><strong>Nao e exigência de desempenho:</strong> cobrar resultados, estabelecer metas e dar feedback duro sobre performance inadequada são parte da gestão legítima, o problema é quando a cobrança é feita de forma humilhante</li>
-<li><strong>Nao e exclusivo do chefe:</strong> o assédio pode ser praticado por colegas (horizontal) ou até por subordinados (ascendente), não apenas pelo superior hierárquico</li>
-<li><strong>Nao e algo que "tem que aguentar"</strong> em nenhuma profissão ou setor</li>
+<li><strong>Não é qualquer conflito ou feedback negativo:</strong> uma avaliação de desempenho crítica, uma advertência formal por erro ou um desentendimento pontual não constituem assédio</li>
+<li><strong>Não é exigência de desempenho:</strong> cobrar resultados, estabelecer metas e dar feedback duro sobre performance inadequada são parte da gestão legítima, o problema é quando a cobrança é feita de forma humilhante</li>
+<li><strong>Não é exclusivo do chefe:</strong> o assédio pode ser praticado por colegas (horizontal) ou até por subordinados (ascendente), não apenas pelo superior hierárquico</li>
+<li><strong>Não é algo que "tem que aguentar"</strong> em nenhuma profissão ou setor</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Comportamentais: isolamento, evitar certas pessoas ou locais, faltas frequentes, pedidos de transferência</li>
@@ -93,9 +93,9 @@ const RISKS_DATA = [
 <li>Pressão por disponibilidade: "Preciso que esteja sempre disponível", "Não pode tirar férias agora"</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e apenas muito trabalho:</strong> um projeto intenso com prazo claro e temporário é diferente de sobrecarga crônica sem perspectiva de alívio</li>
-<li><strong>Nao e preguiça ou falta de organização:</strong> quando a carga estruturalmente excede a capacidade da função, o problema é organizacional, não individual</li>
-<li><strong>Nao e problema apenas de quem reclama:</strong> trabalhadores que nunca reclamam podem estar igualmente sobrecarregados e em maior risco por não buscar ajuda</li>
+<li><strong>Não é apenas muito trabalho:</strong> um projeto intenso com prazo claro e temporário é diferente de sobrecarga crônica sem perspectiva de alívio</li>
+<li><strong>Não é preguiça ou falta de organização:</strong> quando a carga estruturalmente excede a capacidade da função, o problema é organizacional, não individual</li>
+<li><strong>Não é problema apenas de quem reclama:</strong> trabalhadores que nunca reclamam podem estar igualmente sobrecarregados e em maior risco por não buscar ajuda</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Físicos: exaustão crônica, dores musculares, problemas cardíacos, sistema imunológico baixo</li>
@@ -156,9 +156,9 @@ const RISKS_DATA = [
 <li>Comunicação unilateral: nunca ser consultado, opiniões não valorizadas</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e necessidade de elogios constantes:</strong> reconhecimento não é halago vazio, é feedback genuíno e visibilidade justa das contribuições</li>
-<li><strong>Nao e exclusivamente questão de remuneração:</strong> pessoas bem remuneradas também sofrem pela falta de reconhecimento, o dinheiro não substitui o sentido</li>
-<li><strong>Nao e problema apenas de pessoas que escolheram "a profissão errada":</strong> qualquer trabalho pode perder o significado quando as condições organizacionais o tornam alienante</li>
+<li><strong>Não é necessidade de elogios constantes:</strong> reconhecimento não é halago vazio, é feedback genuíno e visibilidade justa das contribuições</li>
+<li><strong>Não é exclusivamente questão de remuneração:</strong> pessoas bem remuneradas também sofrem pela falta de reconhecimento, o dinheiro não substitui o sentido</li>
+<li><strong>Não é problema apenas de pessoas que escolheram "a profissão errada":</strong> qualquer trabalho pode perder o significado quando as condições organizacionais o tornam alienante</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Motivacionais: desmotivação crescente, perda de engajamento, fazer o mínimo necessário</li>
@@ -217,9 +217,9 @@ const RISKS_DATA = [
 <li>Conflitos não resolvidos: tensões antigas que nunca foram tratadas e se acumulam</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e apenas um dia ruim:</strong> o clima organizacional negativo é um padrão persistente, não episódios isolados de tensão</li>
-<li><strong>Nao e culpa de um único indivíduo:</strong> embora líderes tenham papel fundamental, o clima negativo é um fenômeno coletivo que envolve múltiplos atores</li>
-<li><strong>Nao e inevitável:</strong> climas negativos podem ser revertidos com liderança consistente e ações estruturais adequadas</li>
+<li><strong>Não é apenas um dia ruim:</strong> o clima organizacional negativo é um padrão persistente, não episódios isolados de tensão</li>
+<li><strong>Não é culpa de um único indivíduo:</strong> embora líderes tenham papel fundamental, o clima negativo é um fenômeno coletivo que envolve múltiplos atores</li>
+<li><strong>Não é inevitável:</strong> climas negativos podem ser revertidos com liderança consistente e ações estruturais adequadas</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Relacionais: isolamento, conflitos frequentes, falta de confiança mútua entre colegas</li>
@@ -278,9 +278,9 @@ const RISKS_DATA = [
 <li>Criatividade limitada: "Não invente", "Faça como sempre foi feito"</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e ter regras e processos:</strong> toda organização tem procedimentos necessários, o problema é quando eles eliminam completamente o julgamento e a iniciativa do trabalhador</li>
-<li><strong>Nao e ter um gestor próximo:</strong> liderança presente e acessível é diferente de microgerenciamento, um bom gestor orienta sem controlar cada detalhe</li>
-<li><strong>Nao e problema apenas de funções técnicas:</strong> qualquer trabalhador precisa de algum grau de autonomia para se sentir respeitado profissionalmente</li>
+<li><strong>Não é ter regras e processos:</strong> toda organização tem procedimentos necessários, o problema é quando eles eliminam completamente o julgamento e a iniciativa do trabalhador</li>
+<li><strong>Não é ter um gestor próximo:</strong> liderança presente e acessível é diferente de microgerenciamento, um bom gestor orienta sem controlar cada detalhe</li>
+<li><strong>Não é problema apenas de funções técnicas:</strong> qualquer trabalhador precisa de algum grau de autonomia para se sentir respeitado profissionalmente</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Motivacionais: desmotivação, falta de engajamento, sensação de inutilidade e de ser "apenas uma peça"</li>
@@ -340,9 +340,9 @@ const RISKS_DATA = [
 <li>Competição destrutiva: colocar colegas uns contra os outros para disputar posições</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e ter metas e ser cobrado:</strong> estabelecer objetivos claros e acompanhar resultados é parte legítima da gestão</li>
-<li><strong>Nao e exigência de qualidade:</strong> querer que o trabalho seja bem feito é diferente de pressionar com metas irrealistas</li>
-<li><strong>Nao e apenas problema de área comercial:</strong> a pressão por metas existe em todas as áreas e setores, produção, saúde, educação e serviço público incluídos</li>
+<li><strong>Não é ter metas e ser cobrado:</strong> estabelecer objetivos claros e acompanhar resultados é parte legítima da gestão</li>
+<li><strong>Não é exigência de qualidade:</strong> querer que o trabalho seja bem feito é diferente de pressionar com metas irrealistas</li>
+<li><strong>Não é apenas problema de área comercial:</strong> a pressão por metas existe em todas as áreas e setores, produção, saúde, educação e serviço público incluídos</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Físicos: estresse crônico, problemas cardíacos, úlceras, insônia</li>
@@ -401,9 +401,9 @@ const RISKS_DATA = [
 <li>Cultura do culpado: sempre procurar quem errou para punir em vez de aprender com o erro</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e ausência de responsabilidade:</strong> segurança psicológica não significa que erros não tenham consequências, mas que as pessoas não sejam punidas por tentar e por ser honestas</li>
-<li><strong>Nao e concordância obrigatória:</strong> ambientes seguros são justamente aqueles onde discordâncias podem ser expressas com respeito</li>
-<li><strong>Nao e apenas responsabilidade do lider:</strong> toda a equipe contribui para criar ou destruir a segurança psicológica do grupo</li>
+<li><strong>Não é ausência de responsabilidade:</strong> segurança psicológica não significa que erros não tenham consequências, mas que as pessoas não sejam punidas por tentar e por ser honestas</li>
+<li><strong>Não é concordância obrigatória:</strong> ambientes seguros são justamente aqueles onde discordâncias podem ser expressas com respeito</li>
+<li><strong>Não é apenas responsabilidade do lider:</strong> toda a equipe contribui para criar ou destruir a segurança psicológica do grupo</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Comunicacionais: silêncio em reuniões, não compartilhar ideias, concordar sempre mesmo discordando internamente</li>
@@ -462,9 +462,9 @@ const RISKS_DATA = [
 <li>Canais inadequados: discutir assuntos sérios por WhatsApp, e-mail ou mensagem quando precisaria de conversa direta</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e discordância normal:</strong> pessoas com perspectivas diferentes que discordam respeitosamente estão se comunicando bem, não mal</li>
-<li><strong>Nao e apenas problema de personalidade:</strong> comunicação falha frequentemente reflete estruturas e culturas organizacionais, não apenas características individuais</li>
-<li><strong>Nao e resolvido apenas com treinamento:</strong> habilidades de comunicação precisam de prática no dia a dia, não apenas de cursos</li>
+<li><strong>Não é discordância normal:</strong> pessoas com perspectivas diferentes que discordam respeitosamente estão se comunicando bem, não mal</li>
+<li><strong>Não é apenas problema de personalidade:</strong> comunicação falha frequentemente reflete estruturas e culturas organizacionais, não apenas características individuais</li>
+<li><strong>Não é resolvido apenas com treinamento:</strong> habilidades de comunicação precisam de prática no dia a dia, não apenas de cursos</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Relacionais: tensões constantes, evitar certas pessoas, isolamento progressivo</li>
@@ -522,10 +522,10 @@ const RISKS_DATA = [
 <li>Saúde negligenciada: não ter tempo para exercícios, consultas médicas, alimentação adequada</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e fraqueza ou falta de comprometimento:</strong> querer ter vida pessoal saudável não torna o trabalhador menos profissional</li>
-<li><strong>Nao e problema apenas de mães:</strong> o desequilíbrio afeta pessoas de todos os gêneros, embora as mulheres ainda carreguem desproporcionalmente o peso do trabalho doméstico</li>
-<li><strong>Nao e resolvido apenas com home office:</strong> trabalhar de casa sem limites claros frequentemente intensifica o conflito</li>
-<li><strong>Nao e falta de organização pessoal:</strong> quando a estrutura da organização não permite equilíbrio, a gestão pessoal do tempo tem limite</li>
+<li><strong>Não é fraqueza ou falta de comprometimento:</strong> querer ter vida pessoal saudável não torna o trabalhador menos profissional</li>
+<li><strong>Não é problema apenas de mães:</strong> o desequilíbrio afeta pessoas de todos os gêneros, embora as mulheres ainda carreguem desproporcionalmente o peso do trabalho doméstico</li>
+<li><strong>Não é resolvido apenas com home office:</strong> trabalhar de casa sem limites claros frequentemente intensifica o conflito</li>
+<li><strong>Não é falta de organização pessoal:</strong> quando a estrutura da organização não permite equilíbrio, a gestão pessoal do tempo tem limite</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Físicos: exaustão, problemas de saúde, ganho ou perda de peso significativos</li>
@@ -585,9 +585,9 @@ const RISKS_DATA = [
 <li>Modelo negativo: ter comportamentos que não gostaria de ver na equipe</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Nao e apenas estilo pessoal:</strong> a qualidade da liderança tem impacto mensurável na saúde e no desempenho da equipe, não é apenas questão de preferência</li>
-<li><strong>Nao e perfeição:</strong> nenhum lider é perfeito, o que importa é a consciência sobre o impacto e o compromisso com o desenvolvimento</li>
-<li><strong>Nao e exclusivo de grandes lideranças:</strong> coordenadores, supervisores e líderes informais também exercem impacto psicossocial significativo sobre quem está ao redor</li>
+<li><strong>Não é apenas estilo pessoal:</strong> a qualidade da liderança tem impacto mensurável na saúde e no desempenho da equipe, não é apenas questão de preferência</li>
+<li><strong>Não é perfeição:</strong> nenhum lider é perfeito, o que importa é a consciência sobre o impacto e o compromisso com o desenvolvimento</li>
+<li><strong>Não é exclusivo de grandes lideranças:</strong> coordenadores, supervisores e líderes informais também exercem impacto psicossocial significativo sobre quem está ao redor</li>
 </ul>`,
       como_se_manifesta: `<ul>
 <li>Motivacionais: desmotivação generalizada, falta de engajamento na equipe</li>
@@ -1378,7 +1378,7 @@ function renderAvaliacao() {
   <h1 style="margin-bottom:0.4rem">Autoavaliação do Ambiente de Trabalho</h1>
 </div>
 <div class="card avaliacao-intro">
-  <p>Este não é um diagnóstico — é um convite à reflexão. Marque as situações que você <strong>reconhece no seu ambiente de trabalho</strong>, seja como vivência própria ou como algo que você observa acontecer. Não há resposta certa ou errada. Suas respostas ficam salvas apenas no seu dispositivo.</p>
+  <p>Este não é um diagnóstico, é um convite à reflexão. Marque as situações que você <strong>reconhece no seu ambiente de trabalho</strong>, seja como vivência própria ou como algo que você observa acontecer. Não há resposta certa ou errada. Suas respostas ficam salvas apenas no seu dispositivo.</p>
 </div>
 ${sections}
 <div class="avaliacao-counter">
