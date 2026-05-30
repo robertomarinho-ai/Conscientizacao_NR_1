@@ -959,9 +959,10 @@ function markVisited(id) {
 
 function renderHome() {
   const explored = Object.keys(state.progress).length;
-  const cells = RISKS_DATA.map(r =>
-    `<div class="progress-cell ${state.progress[r.id] ? 'visited' : ''}" title="${r.title}">✓</div>`
-  ).join('');
+  const total = RISKS_DATA.length;
+  const pct = Math.round((explored / total) * 100);
+  const circumference = 2 * Math.PI * 36;
+  const dash = circumference * (pct / 100);
 
   const lastQuiz = state.quizHistory.length > 0
     ? state.quizHistory[state.quizHistory.length - 1]
@@ -971,9 +972,9 @@ function renderHome() {
 <section class="hero view-entering">
   <div class="hero-eyebrow">📋 NR-1 · Portaria MTE 1.419/2024</div>
   <h1 class="hero-title">Riscos Psicossociais<br>no Trabalho</h1>
-  <p class="hero-subtitle">A NR-1 atualizada em 2025 tornou obrigatório o gerenciamento dos riscos psicossociais no ambiente de trabalho no Brasil. Conheça os 10 riscos, entenda seus impactos e avalie seu próprio ambiente.</p>
+  <p class="hero-subtitle">A NR-1 atualizada em 2025 tornou obrigatório o gerenciamento dos riscos psicossociais no ambiente de trabalho no Brasil. Conheça os riscos, entenda seus impactos e avalie seu próprio ambiente.</p>
   <div class="hero-actions">
-    <a href="#/explorer" class="btn btn-primary btn-lg">Explorar os 10 Riscos</a>
+    <a href="#/explorer" class="btn btn-primary btn-lg">Explorar Riscos</a>
     <a href="#/quiz" class="btn btn-secondary btn-lg">Fazer o Quiz</a>
   </div>
 </section>
@@ -981,7 +982,7 @@ function renderHome() {
 <div class="stats-grid">
   <div class="card stat-card color-teal">
     <div class="stat-number">10</div>
-    <div class="stat-label">Riscos psicossociais mapeados pela NR-1</div>
+    <div class="stat-label">Riscos psicossociais baseados na ISO 45003 | COPSOQ II | HSE</div>
   </div>
   <div class="card stat-card color-purple">
     <div class="stat-number">2025</div>
@@ -995,12 +996,23 @@ function renderHome() {
 
 <div class="card progress-widget">
   <div class="progress-widget-header">
-    <span class="progress-widget-title">Seu progresso</span>
-    <span class="progress-count">${explored}/10 riscos explorados</span>
+    <span class="progress-widget-title">Evolução dos Riscos Explorados</span>
   </div>
-  <div class="progress-cells">${cells}</div>
-  ${explored === 0 ? '<p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem">Clique em qualquer risco para começar a explorar.</p>' : ''}
-  ${lastQuiz ? `<p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem">Último quiz: <strong style="color:var(--color-teal)">${lastQuiz.score}/${lastQuiz.total}</strong> acertos</p>` : ''}
+  <div class="progress-circle-wrap">
+    <svg class="progress-ring" viewBox="0 0 88 88" aria-hidden="true">
+      <circle class="progress-ring-bg" cx="44" cy="44" r="36"/>
+      <circle class="progress-ring-fill" cx="44" cy="44" r="36"
+        stroke-dasharray="${dash} ${circumference}"
+        stroke-dashoffset="0"
+        transform="rotate(-90 44 44)"/>
+    </svg>
+    <div class="progress-ring-label">
+      <span class="progress-ring-pct">${pct}%</span>
+      <span class="progress-ring-sub">${explored} de ${total}</span>
+    </div>
+  </div>
+  ${explored === 0 ? '<p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem;text-align:center">Clique em qualquer risco para começar a explorar.</p>' : ''}
+  ${lastQuiz ? `<p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem;text-align:center">Último quiz: <strong style="color:var(--color-teal)">${lastQuiz.score}/${lastQuiz.total}</strong> acertos</p>` : ''}
 </div>
 
 <div class="divider"></div>
@@ -1054,7 +1066,7 @@ function renderExplorer() {
 
   return `
 <div style="margin-bottom:1.5rem">
-  <h1 style="margin-bottom:0.4rem">Os 10 Riscos Psicossociais</h1>
+  <h1 style="margin-bottom:0.4rem">Riscos Psicossociais</h1>
   <p style="color:var(--color-text-secondary);font-size:0.9rem">Selecione um risco para aprender sobre seu conceito, manifestações e como agir.</p>
 </div>
 <div class="explorer-controls">

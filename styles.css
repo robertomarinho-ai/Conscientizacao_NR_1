@@ -470,30 +470,54 @@ h4 { font-size: 0.95rem; font-weight: 600; }
   font-weight: 700;
 }
 
-.progress-cells {
-  display: flex;
-  gap: 0.35rem;
-  flex-wrap: wrap;
+.progress-circle-wrap {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0.5rem auto 0;
 }
 
-.progress-cell {
-  width: 26px;
-  height: 26px;
-  border-radius: 6px;
-  background: var(--color-border);
-  border: 1px solid #333;
-  transition: background var(--transition-base), border-color var(--transition-base);
+.progress-ring {
+  width: 120px;
+  height: 120px;
+}
+
+.progress-ring-bg {
+  fill: none;
+  stroke: var(--color-border);
+  stroke-width: 7;
+}
+
+.progress-ring-fill {
+  fill: none;
+  stroke: var(--color-teal);
+  stroke-width: 7;
+  stroke-linecap: round;
+  transition: stroke-dasharray 600ms ease;
+}
+
+.progress-ring-label {
+  position: absolute;
+  inset: 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.65rem;
-  color: transparent;
+  gap: 0.1rem;
 }
 
-.progress-cell.visited {
-  background: var(--color-teal);
-  border-color: var(--color-teal);
-  color: #0D0D0D;
+.progress-ring-pct {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-teal);
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.progress-ring-sub {
+  font-size: 0.65rem;
+  color: var(--color-text-secondary);
+  font-weight: 600;
 }
 
 /* --- Explorer --- */
