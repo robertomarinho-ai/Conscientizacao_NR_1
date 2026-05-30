@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Riscos Psicossociais NR-1</title>
+  <meta name="description" content="Conscientização sobre Riscos Psicossociais no trabalho conforme a NR-1 atualizada em 2025. Explore os 10 principais riscos, faça o quiz e avalie seu ambiente de trabalho." />
+  <meta name="theme-color" content="#0D0D0D" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;0,14..32,800;1,14..32,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="reading-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso de leitura"></div>
+
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <a href="#/" class="site-logo" aria-label="NR-1 Psicossocial — Página inicial">
+        🧠 NR-1 <span class="logo-badge">PSI</span>
+      </a>
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#/" class="nav-link" data-nav="home">Início</a>
+        <a href="#/explorer" class="nav-link" data-nav="explorer">Riscos</a>
+        <a href="#/quiz" class="nav-link" data-nav="quiz">Quiz</a>
+        <a href="#/avaliacao" class="nav-link" data-nav="avaliacao">Autoavaliação</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="app" role="main" aria-live="polite" aria-atomic="false">
+    <!-- Conteúdo dinâmico renderizado por app.js -->
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <p>
+      Conteúdo baseado na <strong>NR-1</strong> — Norma Regulamentadora nº 1 do Ministério do Trabalho e Emprego, atualizada em 2025 para incluir Riscos Psicossociais (Portaria MTE nº 1.419/2024).
+    </p>
+    <p style="margin-top:0.4rem">
+      Material educativo. Para situações específicas, consulte o SESMT, médico do trabalho ou psicólogo ocupacional.
+    </p>
+  </footer>
+
+  <div id="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
