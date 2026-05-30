@@ -101,14 +101,63 @@ button { cursor: pointer; font-family: inherit; border: none; background: none; 
 
 .site-logo:hover { text-decoration: none; }
 
-.logo-badge {
-  background: var(--color-teal);
-  color: #0D0D0D;
-  font-size: 0.6rem;
+.brand-mark {
+  flex-shrink: 0;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+}
+
+.brand-name {
+  font-size: 0.92rem;
   font-weight: 800;
-  padding: 2px 6px;
-  border-radius: 4px;
-  letter-spacing: 0.08em;
+  color: var(--color-text-primary);
+  letter-spacing: -0.01em;
+}
+
+.brand-tagline {
+  font-size: 0.6rem;
+  font-weight: 600;
+  color: var(--color-teal);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* Footer brand */
+.footer-brand {
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  align-items: center;
+}
+
+.footer-brand-name {
+  font-weight: 700;
+  color: var(--color-text-primary);
+  font-size: 0.82rem;
+}
+
+.footer-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  font-size: 0.78rem;
+}
+
+.footer-contact a { color: var(--color-teal); }
+.footer-sep { color: var(--color-border); }
+
+@media (max-width: 420px) {
+  .brand-tagline { display: none; }
 }
 
 .site-nav {
