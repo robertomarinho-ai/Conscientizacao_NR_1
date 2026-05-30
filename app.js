@@ -981,7 +981,7 @@ function renderHome() {
 
 <div class="stats-grid">
   <div class="card stat-card color-teal">
-    <div class="stat-number">10</div>
+    <div class="stat-number">#</div>
     <div class="stat-label">Riscos psicossociais baseados na ISO 45003 | COPSOQ II | HSE</div>
   </div>
   <div class="card stat-card color-purple">
@@ -1008,7 +1008,6 @@ function renderHome() {
     </svg>
     <div class="progress-ring-label">
       <span class="progress-ring-pct">${pct}%</span>
-      <span class="progress-ring-sub">${explored} de ${total}</span>
     </div>
   </div>
   ${explored === 0 ? '<p style="font-size:0.8rem;color:var(--color-text-secondary);margin-top:0.75rem;text-align:center">Clique em qualquer risco para começar a explorar.</p>' : ''}
