@@ -6,615 +6,622 @@
 
 const RISKS_DATA = [
   {
-    id: 'excesso-demandas',
-    title: 'Excesso de Demandas e Pressão de Tempo',
-    icon: '⚡',
-    colorClass: 'teal',
-    category: 'carga',
-    categoryLabel: 'Carga e Demanda',
-    summary: 'Quando o volume de trabalho supera consistentemente a capacidade humana de entrega, gerando sobrecarga crônica.',
-    tabs: {
-      conceito: `<p>O excesso de demandas e a pressão de tempo ocorrem quando as exigências do trabalho — em quantidade, complexidade ou urgência — ultrapassam de forma sistemática a capacidade de uma pessoa realizá-las dentro do tempo disponível, com qualidade e sem comprometer sua saúde.</p>
-<p>Diferente de períodos pontuais de maior trabalho (que são normais em qualquer carreira), esse risco se caracteriza pela <strong>cronicidade</strong>: a sobrecarga deixa de ser exceção e passa a ser a regra. A NR-1 reconhece esse padrão como fator de risco psicossocial porque gera estados prolongados de estresse que comprometem o bem-estar físico e mental do trabalhador.</p>
-<p>Segundo o modelo de Demanda-Controle de Karasek, situações de alta demanda aliadas a baixo controle representam o cenário de maior risco para doenças relacionadas ao trabalho.</p>`,
-      o_que_e: `<ul>
-<li>Receber consistentemente mais tarefas do que é humanamente possível concluir no expediente regular</li>
-<li>Prazos habitualmente impossíveis ou estabelecidos sem consulta à equipe sobre viabilidade</li>
-<li>Acúmulo de funções por redução de quadro sem redistribuição real das responsabilidades</li>
-<li>Expectativa implícita ou explícita de disponibilidade fora do horário de trabalho (responder mensagens à noite, nos fins de semana)</li>
-<li>Metas quantitativas estabelecidas sem considerar a qualidade necessária ou os recursos disponíveis</li>
-<li>Interrupções constantes que impedem a concentração, tornando o tempo de trabalho ineficiente sem que a quantidade de tarefas diminua</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é apenas "muito trabalho":</strong> um projeto intenso com prazo claro e temporário é diferente de sobrecarga crônica sem perspectiva de alívio</li>
-<li><strong>Não é preguiça ou falta de organização:</strong> quando a carga estruturalmente excede a capacidade da função, o problema é organizacional, não individual</li>
-<li><strong>Não é o mesmo que dificuldade com a tarefa:</strong> a pessoa pode ser muito competente e ainda assim estar sobrecarregada pelo volume, não pela complexidade</li>
-<li><strong>Não é problema apenas de quem reclama:</strong> trabalhadores que nunca reclamam podem estar igualmente sobrecarregados e em maior risco, por não buscarem ajuda</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Dificuldade persistente em terminar o trabalho no horário, levando ao prolongamento constante da jornada</li>
-<li>Sensação de nunca "zerar" a lista de tarefas, com acúmulo progressivo de pendências</li>
-<li>Dificuldade de descanso real mesmo nos momentos de folga, com pensamentos recorrentes sobre o trabalho</li>
-<li>Irritabilidade, impaciência e menor tolerância a imprevistos por conta do nível de tensão permanente</li>
-<li>Erros mais frequentes por falta de atenção, não por incompetência</li>
-<li>Sintomas físicos: dores de cabeça, tensão muscular, distúrbios do sono, fadiga que não passa com o descanso</li>
-<li>Sensação de culpa por não conseguir dar conta de tudo, mesmo trabalhando mais do que o previsto</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Callcenter:</strong> atendente precisa cumprir meta de 120 ligações por turno, registrar detalhes de cada atendimento e ainda resolver reclamações complexas — em simultâneo, sem tempo entre as chamadas</li>
-<li><strong>Hospital:</strong> enfermeira responsável por 20 leitos sozinha no plantão noturno, acumulando funções que originalmente seriam de uma equipe de três</li>
-<li><strong>Escola pública:</strong> professor com 40 alunos por turma, 5 turmas por dia, planejamento, correções, relatórios e reuniões de pais — tudo fora do horário de aula, sem hora-atividade suficiente</li>
-<li><strong>Escritório:</strong> analista que cobre licença de colega sem redução das próprias metas, respondendo e-mails até meia-noite para "não ficar atrasado"</li>
-<li><strong>Varejo:</strong> gerente de loja que acumula função de operador de caixa, estoquista e atendimento ao cliente nos dias de folga de funcionários, sem remuneração adicional</li>
-</ul>`,
-      impactos: `<ul>
-<li><strong>Burnout (Síndrome de Esgotamento Profissional):</strong> reconhecida pela OMS como doença ocupacional, diretamente associada à sobrecarga crônica</li>
-<li>Transtornos de ansiedade e ataques de pânico</li>
-<li>Depressão relacionada ao trabalho</li>
-<li>Hipertensão arterial e maior risco cardiovascular</li>
-<li>Distúrbios do sono (insônia, sono não reparador)</li>
-<li>Comprometimento imunológico com adoecimento frequente</li>
-<li>Erros graves e acidentes de trabalho por déficit de atenção causado pela fadiga</li>
-<li>Afastamentos prolongados e incapacidade laborativa</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> registre formalmente as demandas excessivas (e-mail, sistema interno) para criar histórico; comunique ao gestor com dados concretos sobre volume e prazos; não aceite em silêncio — o silêncio é interpretado como capacidade</li>
-<li><strong>Para o trabalhador:</strong> estabeleça e comunique limites claros de disponibilidade, respaldado pela legislação (art. 58 da CLT e decisões do TST sobre sobreaviso digital)</li>
-<li><strong>Para a organização:</strong> realizar mapeamento real de carga de trabalho antes de definir metas e quadro de pessoal</li>
-<li><strong>Para a organização:</strong> incluir o tema de gestão de demandas nas avaliações de risco psicossocial previstas na NR-1</li>
-<li><strong>Para a organização:</strong> criar canais seguros para reporte de sobrecarga sem medo de represálias</li>
-<li><strong>Recursos:</strong> consulte o SESMT, médico do trabalho ou psicólogo ocupacional da empresa; sindicato da categoria pode orientar sobre direitos</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'ed-1', text: 'Com frequência não consigo terminar minhas tarefas dentro do horário de trabalho' },
-      { id: 'ed-2', text: 'Sinto que tenho trabalho suficiente para duas ou mais pessoas' },
-      { id: 'ed-3', text: 'Prazos impossíveis são rotina, não exceção no meu trabalho' },
-      { id: 'ed-4', text: 'Fico pensando no trabalho mesmo quando estou de folga ou em férias' },
-    ]
-  },
-  {
-    id: 'falta-controle',
-    title: 'Falta de Controle sobre o Trabalho',
-    icon: '🔒',
-    colorClass: 'purple',
-    category: 'organizacional',
-    categoryLabel: 'Organizacional',
-    summary: 'Ausência de autonomia para decidir como, quando e com que ritmo realizar as próprias tarefas.',
-    tabs: {
-      conceito: `<p>A falta de controle sobre o trabalho refere-se à ausência de autonomia do trabalhador para tomar decisões sobre aspectos relevantes de sua própria função: como organizar as tarefas, em que ritmo trabalhar, quais métodos usar, quando fazer pausas e como enfrentar os problemas que surgem.</p>
-<p>O controle sobre o trabalho é um fator protetor fundamental para a saúde mental. Quando as pessoas têm autonomia, conseguem adaptar as demandas às suas capacidades, gerenciar o estresse de forma ativa e encontrar significado no que fazem. Sua ausência cria uma sensação de impotência que, combinada com alta demanda, representa o maior fator de risco para doenças relacionadas ao trabalho segundo a literatura científica.</p>`,
-      o_que_e: `<ul>
-<li>Ser obrigado a seguir scripts rígidos sem possibilidade de adaptar a abordagem à situação real</li>
-<li>Não ter voz na definição de metas, prazos ou métodos de trabalho que te afetam diretamente</li>
-<li>Monitoramento excessivo: tempo de banheiro cronometrado, cada clique rastreado, câmeras sobre a mesa</li>
-<li>Impossibilidade de decidir a ordem de execução das próprias tarefas</li>
-<li>Microgerenciamento: precisar pedir autorização para qualquer decisão, mesmo as triviais</li>
-<li>Ausência de participação em decisões que afetam diretamente seu trabalho ou setor</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é ter regras e processos:</strong> toda organização tem procedimentos necessários; o problema é quando esses procedimentos eliminam completamente o julgamento e a iniciativa do trabalhador</li>
-<li><strong>Não é ter um gestor próximo:</strong> liderança presente e acessível é diferente de microgerenciamento; um bom gestor orienta sem controlar cada detalhe</li>
-<li><strong>Não é apenas para funções técnicas:</strong> um atendente de caixa, um operador de linha ou um auxiliar administrativo também precisam de algum grau de autonomia para se sentir respeitados profissionalmente</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Sensação constante de "ser apenas uma peça" — desmotivação e desconexão com o próprio trabalho</li>
-<li>Dificuldade em tomar decisões simples por receio de erro ou punição</li>
-<li>Frustração e raiva reprimidas por não poder usar seus conhecimentos e experiência</li>
-<li>Presenteísmo: estar presente fisicamente, mas emocionalmente desengajado</li>
-<li>Ansiedade ao precisar improvisar em situações não previstas nos procedimentos</li>
-<li>Pedidos frequentes de confirmação para tarefas que a pessoa já sabe fazer</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Telemarketing:</strong> atendente que deve seguir um roteiro palavra por palavra, sem poder adaptar a linguagem ao cliente, mesmo percebendo que a abordagem não está funcionando</li>
-<li><strong>Logística:</strong> motorista rastreado em tempo real com alertas automáticos para cada parada além do previsto, sem possibilidade de ajustar rota por conta própria mesmo em situações de trânsito óbvio</li>
-<li><strong>Saúde:</strong> técnico de enfermagem que não pode tomar nenhuma decisão clínica simples (mesmo dentro de sua competência técnica) sem aguardar autorização de médico indisponível</li>
-<li><strong>Tecnologia:</strong> desenvolvedor sênior que precisa justificar por escrito cada linha de código para um gestor sem formação técnica antes de poder fazer o commit</li>
-</ul>`,
-      impactos: `<ul>
-<li>Estresse crônico e síndrome de esgotamento</li>
-<li>Depressão e sensação de ineficácia profissional</li>
-<li>Alta rotatividade e absenteísmo na equipe</li>
-<li>Hipertensão e doenças cardiovasculares (evidência forte na literatura)</li>
-<li>Perda de competência prática por falta de uso — o trabalhador perde confiança em si mesmo</li>
-<li>Desengajamento total que prejudica a qualidade do serviço entregue</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> proponha conversas com o gestor sobre autonomia com responsabilidade — mostre que você entende os riscos e tem soluções</li>
-<li><strong>Para o trabalhador:</strong> documente situações onde a falta de autonomia causou piora no resultado — dados concretos têm mais impacto do que queixas</li>
-<li><strong>Para a organização:</strong> revisar processos que eliminam desnecessariamente a autonomia — pergunte "este controle resolve um problema real ou apenas transmite desconfiança?"</li>
-<li><strong>Para a organização:</strong> treinar líderes para diferenciar orientação de microgerenciamento</li>
-<li><strong>Para a organização:</strong> criar espaços reais de participação onde a equipe influencia decisões que afetam seu trabalho</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'fc-1', text: 'Tenho pouca ou nenhuma liberdade para decidir como realizar minhas tarefas' },
-      { id: 'fc-2', text: 'Me sinto monitorado(a) de forma excessiva no trabalho' },
-      { id: 'fc-3', text: 'Não sou consultado(a) sobre decisões que afetam diretamente minha função' },
-    ]
-  },
-  {
-    id: 'suporte-social',
-    title: 'Suporte Social Inadequado',
-    icon: '🤝',
-    colorClass: 'teal',
-    category: 'relacional',
-    categoryLabel: 'Relacional',
-    summary: 'Ausência de apoio emocional, instrumental ou informacional de colegas e gestores quando necessário.',
-    tabs: {
-      conceito: `<p>O suporte social no trabalho refere-se à disponibilidade de ajuda prática, emocional e informacional que colegas e gestores oferecem uns aos outros. Quando esse suporte é inadequado — seja porque não existe, seja porque é inconsistente ou condicionado —, o trabalhador enfrenta os desafios da função em isolamento.</p>
-<p>O suporte social funciona como um "amortecedor" do estresse ocupacional: pesquisas mostram que trabalhadores com bom suporte social enfrentam melhor as pressões do trabalho e adoecem menos. Sua ausência não apenas deixa o trabalhador desamparado, mas amplifica o impacto de todos os outros riscos psicossociais presentes no ambiente.</p>`,
-      o_que_e: `<ul>
-<li>Gestor que ignora solicitações de ajuda ou as trata como sinal de incompetência</li>
-<li>Cultura de competição entre colegas que torna o pedido de ajuda uma vulnerabilidade</li>
-<li>Isolamento físico ou funcional: trabalhar de forma tão separada que não há contato com a equipe</li>
-<li>Ausência de feedback construtivo — a pessoa nunca sabe se está no caminho certo</li>
-<li>Falta de apoio emocional em situações difíceis (atendimento de situações traumáticas, luto, crises pessoais)</li>
-<li>Informações retidas deliberadamente por colegas que as veem como vantagem competitiva</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é exigir que colegas resolvam seus problemas:</strong> suporte social saudável envolve colaboração e disponibilidade, não dependência</li>
-<li><strong>Não é ausência de hierarquia:</strong> organizações podem ter estrutura hierárquica clara e ainda oferecer suporte social adequado — o que importa é o clima de apoio mútuo</li>
-<li><strong>Não é exclusivamente responsabilidade do RH:</strong> o suporte social emerge principalmente das interações do cotidiano, não de programas formais</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Sensação persistente de estar "sozinho" mesmo rodeado de colegas</li>
-<li>Hesitação em pedir ajuda por medo de ser visto como fraco ou incompetente</li>
-<li>Decisões tomadas no escuro, sem acesso a informações ou orientações necessárias</li>
-<li>Maior vulnerabilidade emocional a críticas e contratempos</li>
-<li>Percepção de que "não há a quem recorrer" em situações de dificuldade</li>
-<li>Desmotivação progressiva e distanciamento afetivo do trabalho e da equipe</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Home office:</strong> trabalhador remoto que nunca recebe retorno sobre seu desempenho, cujas mensagens ficam sem resposta por dias e que não tem acesso informal às decisões que afetam seu trabalho</li>
-<li><strong>Saúde mental:</strong> psicólogo clínico em hospital que lida diariamente com situações traumáticas sem nenhuma supervisão ou espaço para processar o impacto emocional do trabalho</li>
-<li><strong>Indústria:</strong> operador novo em linha de produção que não recebe orientação dos colegas mais experientes pois eles veem o novato como ameaça ao emprego</li>
-<li><strong>Vendas:</strong> equipe onde o gestor só interage com os que batem meta, ignorando completamente os que estão com dificuldade justamente quando mais precisariam de apoio</li>
-</ul>`,
-      impactos: `<ul>
-<li>Isolamento social e solidão no trabalho</li>
-<li>Maior risco de depressão e ansiedade</li>
-<li>Burnout acelerado pela ausência de "válvulas de alívio" sociais</li>
-<li>Erros por falta de informação ou orientação adequada</li>
-<li>Alta rotatividade — pessoas deixam líderes, não empresas</li>
-<li>Clima organizacional negativo que se retroalimenta</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> busque ativamente criar conexões com colegas; pequenas interações regulares constroem a base do suporte social</li>
-<li><strong>Para o trabalhador:</strong> expresse suas necessidades ao gestor de forma objetiva — muitos gestores não percebem que sua equipe precisa de mais suporte</li>
-<li><strong>Para a organização:</strong> criar rituais de equipe (reuniões de check-in, momentos de compartilhamento) que fortaleçam os laços entre as pessoas</li>
-<li><strong>Para a organização:</strong> treinar líderes para oferecer feedback regular e positivo, não apenas corretivo</li>
-<li><strong>Para a organização:</strong> garantir que trabalhadores remotos tenham acesso equivalente ao suporte disponível para os presenciais</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'ss-1', text: 'Me sinto sozinho(a) para resolver os problemas do trabalho' },
-      { id: 'ss-2', text: 'Meu gestor raramente está disponível quando preciso de orientação' },
-      { id: 'ss-3', text: 'No meu ambiente de trabalho, pedir ajuda é visto como fraqueza' },
-    ]
-  },
-  {
-    id: 'conflito-familia',
-    title: 'Conflito Trabalho-Família',
-    icon: '⚖️',
-    colorClass: 'amber',
-    category: 'carga',
-    categoryLabel: 'Carga e Demanda',
-    summary: 'Quando as exigências do trabalho e da vida pessoal entram em conflito de forma sistemática, impossibilitando o equilíbrio.',
-    tabs: {
-      conceito: `<p>O conflito trabalho-família ocorre quando as demandas, o tempo ou a energia exigidos pelo trabalho interferem sistematicamente na vida pessoal e familiar — ou vice-versa. Trata-se de uma incompatibilidade entre os papéis profissional e familiar que não pode ser facilmente resolvida pelo próprio trabalhador sem que algo importante seja sacrificado.</p>
-<p>Com o avanço da tecnologia e do trabalho remoto, as fronteiras entre trabalho e vida pessoal tornaram-se cada vez mais porosas. A NR-1 reconhece esse conflito como risco psicossocial porque seus impactos na saúde são bem documentados e, frequentemente, resultam de escolhas organizacionais — não apenas de dificuldades individuais de "gestão do tempo".</p>`,
-      o_que_e: `<ul>
-<li>Jornadas de trabalho que se estendem regularmente para horários de convivência familiar</li>
-<li>Disponibilidade 24h esperada (mensagens, ligações, e-mails fora do horário)</li>
-<li>Escalas de trabalho que desconsideram sistematicamente compromissos familiares (plantões noturnos, fins de semana, feriados)</li>
-<li>Falta de flexibilidade para lidar com emergências familiares sem penalização</li>
-<li>Viagens frequentes que impõem ausência prolongada da família</li>
-<li>Trabalho que "invade" o espaço doméstico quando feito em home office sem estrutura adequada</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é fraqueza ou falta de comprometimento:</strong> querer ter vida familiar saudável não torna o trabalhador menos profissional</li>
-<li><strong>Não é problema apenas de mães:</strong> o conflito trabalho-família afeta pessoas de todos os gêneros, embora as mulheres ainda carreguem desproporcionalmente o peso do trabalho doméstico</li>
-<li><strong>Não é resolvido apenas com home office:</strong> trabalhar de casa sem limites claros frequentemente intensifica o conflito, misturando os dois mundos sem separação</li>
-<li><strong>Não é falta de organização pessoal:</strong> quando a estrutura da organização não permite equilíbrio, a gestão pessoal do tempo tem limite</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Culpa persistente: sempre que está no trabalho pensa na família; sempre que está com a família pensa no trabalho</li>
-<li>Incapacidade de "desligar" do trabalho durante momentos familiares</li>
-<li>Conflitos e tensões familiares atribuíveis à ausência ou ao estresse trazido do trabalho</li>
-<li>Perda de momentos importantes (aniversários, eventos dos filhos, cuidado de familiar doente) por demandas do trabalho</li>
-<li>Parceiro(a) ou filhos demonstrando ressentimento pela ausência ou pelo estado emocional trazido do trabalho</li>
-<li>Sensação de falhar em todos os papéis — nem bom profissional nem bom pai/mãe/cônjuge</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Gestão:</strong> gerente que perdeu a apresentação do filho na escola pela terceira vez seguida por não conseguir sair antes das 21h nos dias úteis</li>
-<li><strong>Saúde:</strong> médico plantonista que faz 12 plantões por mês, chegando em casa esgotado sem energia para interagir com a família</li>
-<li><strong>Tecnologia:</strong> desenvolvedor em startup que recebe mensagens do chefe às 23h com a expectativa implícita de resposta imediata</li>
-<li><strong>Serviço público:</strong> servidora que cuida de pai idoso e não consegue ajustar o horário de trabalho mesmo com possibilidade técnica de fazer, por cultura organizacional rígida</li>
-</ul>`,
-      impactos: `<ul>
-<li>Estresse crônico e burnout</li>
-<li>Comprometimento da qualidade dos relacionamentos afetivos</li>
-<li>Aumento do risco de separação/divórcio</li>
-<li>Impacto no desenvolvimento dos filhos pela ausência do responsável</li>
-<li>Depressão e ansiedade</li>
-<li>Maior risco de alcoolismo e outras dependências como forma de "desligar"</li>
-<li>Doenças psicossomáticas: gastrite, enxaqueca, tensão muscular crônica</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> estabeleça limites explícitos e comunique-os claramente — defina horários de disponibilidade e cumpra-os</li>
-<li><strong>Para o trabalhador:</strong> conheça seus direitos: a CLT limita a jornada e o TST tem jurisprudência sobre sobreaviso digital</li>
-<li><strong>Para a organização:</strong> implementar política real de desconexão digital — não apenas declarativa</li>
-<li><strong>Para a organização:</strong> oferecer flexibilidade de horário como medida protetiva, não como benefício especial</li>
-<li><strong>Para a organização:</strong> incluir o impacto nas famílias como critério nas decisões sobre jornadas e escalas</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'cf-1', text: 'O trabalho me impede regularmente de participar de momentos importantes com minha família' },
-      { id: 'cf-2', text: 'Recebo mensagens ou ligações de trabalho fora do horário com expectativa de resposta' },
-      { id: 'cf-3', text: 'Sinto culpa tanto no trabalho (por pensar na família) quanto em casa (por pensar no trabalho)' },
-    ]
-  },
-  {
-    id: 'inseguranca-trabalho',
-    title: 'Insegurança no Trabalho',
-    icon: '🌪️',
-    colorClass: 'amber',
-    category: 'organizacional',
-    categoryLabel: 'Organizacional',
-    summary: 'Medo persistente de perder o emprego ou de mudanças negativas nas condições de trabalho sem controle sobre isso.',
-    tabs: {
-      conceito: `<p>A insegurança no trabalho é definida como a percepção de uma ameaça involuntária à continuidade do emprego ou às características valorizadas do próprio trabalho — função, salário, status, progressão. O elemento central é a <strong>falta de controle</strong> sobre essa ameaça percebida.</p>
-<p>Ela pode ser objetiva (demissões em massa anunciadas, contratos temporários próximos do fim) ou subjetiva (percepção de instabilidade mesmo sem sinais claros). Em ambos os casos, o impacto na saúde é similar, porque o organismo responde ao que é percebido como ameaça, não apenas ao que é real. A NR-1 reconhece esse estressor crônico como fator de risco psicossocial porque impacta diretamente a saúde mental e o comportamento no trabalho.</p>`,
-      o_que_e: `<ul>
-<li>Clima de demissões constantes sem critérios claros ou transparência</li>
-<li>Contratos temporários renovados de forma incerta, mantendo o trabalhador em constante ansiedade</li>
-<li>Reestruturações e mudanças organizacionais frequentes sem comunicação adequada aos afetados</li>
-<li>Ameaças veladas sobre o emprego usadas como forma de pressão e controle</li>
-<li>Discriminação que coloca certos grupos em posição mais vulnerável (mulheres próximas de licença maternidade, trabalhadores mais velhos)</li>
-<li>Rumores não esclarecidos pela liderança sobre fechamentos, fusões ou cortes</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é sensibilidade excessiva:</strong> preocupar-se com o emprego em um contexto de instabilidade real é uma resposta racional, não um problema pessoal</li>
-<li><strong>Não é exclusivo de crises econômicas:</strong> a insegurança pode existir em empresas lucrativas quando a gestão usa o medo como ferramenta de controle</li>
-<li><strong>Não é resolvido apenas com remuneração:</strong> salário competitivo não elimina a insegurança se a percepção de ameaça ao cargo permanecer</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Hipervigilância: observar constantemente os comportamentos dos gestores em busca de sinais de demissão iminente</li>
-<li>Dificuldade de concentração e queda de produtividade por conta da preocupação constante</li>
-<li>Comportamentos de autoproteção: evitar discordar do chefe, trabalhar além do necessário por medo de "parecer dispensável"</li>
-<li>Insônia, ansiedade e tensão física persistentes</li>
-<li>Resistência a tirar férias por medo de "ficar para trás" ou "ser esquecido"</li>
-<li>Impacto financeiro antecipado: restrição de gastos mesmo sem demissão efetiva, gerando sofrimento preventivo</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Indústria:</strong> operário que vê colegas sendo demitidos uma vez por mês em "otimizações de processo" sem critério claro — ele nunca sabe se será o próximo</li>
-<li><strong>Startup:</strong> desenvolvedor em empresa que faz rodadas de demissão em massa a cada pivô estratégico, sem comunicação prévia à equipe</li>
-<li><strong>Serviço público:</strong> servidor em cargo comissionado que sente a pressão de que qualquer discordância pode resultar na perda da função</li>
-<li><strong>Terceirizado:</strong> trabalhador terceirizado que renova contrato a cada 6 meses sem saber se será mantido, sem acesso às informações sobre o contrato entre as empresas</li>
-</ul>`,
-      impactos: `<ul>
-<li>Ansiedade crônica e transtornos de ansiedade generalizada</li>
-<li>Depressão</li>
-<li>Comprometimento do sistema cardiovascular</li>
-<li>Comportamentos de risco: tabagismo, uso de álcool como estratégia de enfrentamento</li>
-<li>Comprometimento da vida financeira e dos planos de vida</li>
-<li>Deterioração das relações familiares pelo estresse trazido para casa</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> mantenha seu networking ativo e habilidades atualizadas — não como sinal de deslealdade, mas como cuidado com sua própria segurança</li>
-<li><strong>Para o trabalhador:</strong> busque informações concretas em vez de alimentar rumores — a incerteza percebida é frequentemente pior do que a realidade</li>
-<li><strong>Para a organização:</strong> comunicar com transparência as perspectivas e mudanças, mesmo quando as notícias não são boas</li>
-<li><strong>Para a organização:</strong> estabelecer critérios claros e justos para decisões sobre quadro de pessoal</li>
-<li><strong>Para a organização:</strong> eliminar o uso do medo de demissão como ferramenta de gestão — isso destrói a confiança e o engajamento</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'it-1', text: 'Tenho medo constante de ser demitido(a) mesmo sem motivo concreto' },
-      { id: 'it-2', text: 'As decisões sobre demissões na minha empresa são opacas e imprevisíveis' },
-      { id: 'it-3', text: 'Evito discordar do meu gestor por medo de consequências para meu emprego' },
-    ]
-  },
-  {
-    id: 'assedio-moral',
-    title: 'Assédio Moral e Violência no Trabalho',
-    icon: '⚠️',
+    id: 'assedio-moral-sexual',
+    title: 'Assédio Moral e Sexual',
+    icon: '🚫',
     colorClass: 'purple',
     category: 'relacional',
     categoryLabel: 'Relacional',
-    summary: 'Condutas abusivas, humilhantes ou violentas que degradam a dignidade e o ambiente de trabalho.',
+    summary: 'Comportamentos abusivos, humilhantes ou constrangedores que violam a dignidade da pessoa, incluindo condutas de natureza sexual não desejadas.',
     tabs: {
-      conceito: `<p>O assédio moral no trabalho é definido como qualquer conduta abusiva — gestos, palavras, comportamentos, atitudes — que atente, por sua repetição ou sistematização, contra a dignidade ou a integridade psíquica ou física de uma pessoa, ameaçando seu emprego ou degradando o clima de trabalho.</p>
-<p>O elemento central é a <strong>repetição e intencionalidade</strong>: um episódio isolado e involuntário de comportamento inadequado não configura assédio moral, embora possa ser grave por outros motivos. A NR-1 e a Lei 14.457/2022 reconhecem explicitamente o assédio moral e sexual como riscos psicossociais que as organizações têm obrigação legal de prevenir e combater.</p>`,
+      conceito: `<p>O assédio moral e sexual no trabalho engloba comportamentos abusivos, humilhantes ou constrangedores que violam a dignidade da pessoa. Inclui condutas de natureza sexual não desejadas, "brincadeiras" ofensivas, exclusão social deliberada e uso do poder para intimidar ou constranger.</p>
+<p>O elemento central não é apenas a gravidade de um episódio isolado, mas o padrão de comportamento que degrada sistematicamente o ambiente e a dignidade de quem trabalha. A NR-1 e a Lei 14.457/2022 reconhecem explicitamente esses comportamentos como riscos psicossociais que as organizações têm obrigação legal de prevenir e combater.</p>`,
       o_que_e: `<ul>
-<li>Humilhações repetidas em público: xingamentos, apelidos depreciativos, ridicularização de erros na frente da equipe</li>
-<li>Isolamento social organizado: colegas instruídos a não conversar com determinado trabalhador</li>
-<li>Sabotagem profissional: retenção de informações necessárias para o trabalho, criação de obstáculos propositais</li>
-<li>Críticas desproporcionais e constantes sem propósito construtivo</li>
-<li>Atribuição de tarefas impossíveis, inúteis ou humilhantes para forçar o pedido de demissão</li>
-<li>Ameaças veladas ou explícitas relacionadas ao emprego</li>
-<li>Violência física, ameaças e agressões verbais graves</li>
+<li>Comentários sobre aparência física: "Essa roupa não te favorece", "Você engordou?", "Que cabelo é esse?"</li>
+<li>Apelidos baseados em características pessoais: "Gordinho", "Baixinha", "Quatro-olhos", "Cabeção"</li>
+<li>"Brincadeiras" constrangedoras: imitar sotaque, zombar de hábitos pessoais, fazer piadas sobre origem</li>
+<li>Exclusão deliberada: não convidar para reuniões importantes, excluir de grupos de comunicação da equipe</li>
+<li>Comentários sobre vida pessoal: "Ainda solteira?", "Quando vai ter filhos?", "Seu marido deixa?"</li>
+<li>Assédio sexual: cantadas, convites insistentes, comentários sobre o corpo, toques não consensuais</li>
+<li>Humilhação pública: gritar, xingar, criticar na frente de outros, expor erros publicamente</li>
+<li>Sabotagem profissional: esconder informações, dar tarefas impossíveis, reter recursos necessários</li>
+<li>Chantagem emocional: "Se você não fizer isso, vai prejudicar a equipe", "Depois não reclame se..."</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Não é qualquer conflito ou feedback negativo:</strong> uma avaliação de desempenho crítica, uma advertência formal por erro ou um desentendimento pontual não constituem assédio moral</li>
-<li><strong>Não é exigência de desempenho:</strong> cobrar resultados, estabelecer metas e dar feedback duro sobre performance inadequada são parte da gestão legítima — o problema é quando a cobrança é feita de forma humilhante ou desproporcional</li>
-<li><strong>Não é apenas o que o chefe faz:</strong> o assédio pode ser praticado por colegas (horizontal) ou até por subordinados (ascendente) — não apenas pelo superior hierárquico</li>
-<li><strong>Não é algo que "tem que aguentar" em nenhuma profissão</strong></li>
+<li><strong>Nao e qualquer conflito ou feedback negativo:</strong> uma avaliação de desempenho crítica, uma advertência formal por erro ou um desentendimento pontual não constituem assédio</li>
+<li><strong>Nao e exigência de desempenho:</strong> cobrar resultados, estabelecer metas e dar feedback duro sobre performance inadequada são parte da gestão legítima, o problema é quando a cobrança é feita de forma humilhante</li>
+<li><strong>Nao e exclusivo do chefe:</strong> o assédio pode ser praticado por colegas (horizontal) ou até por subordinados (ascendente), não apenas pelo superior hierárquico</li>
+<li><strong>Nao e algo que "tem que aguentar"</strong> em nenhuma profissão ou setor</li>
 </ul>`,
       como_se_manifesta: `<ul>
-<li>Ansiedade intensa antes de ir ao trabalho, especialmente antes de encontrar o agressor</li>
-<li>Sintomas físicos no ambiente de trabalho: tremores, náuseas, palpitações</li>
-<li>Isolamento progressivo: a vítima começa a evitar interações para fugir da situação</li>
-<li>Dúvida sobre a própria percepção ("será que estou exagerando?") — chamada de gaslighting quando promovida intencionalmente pelo agressor</li>
-<li>Queda brusca de desempenho em profissional anteriormente eficiente</li>
-<li>Afastamentos frequentes por motivos de saúde</li>
+<li>Comportamentais: isolamento, evitar certas pessoas ou locais, faltas frequentes, pedidos de transferência</li>
+<li>Emocionais: ansiedade, depressão, baixa autoestima, irritabilidade, choro frequente</li>
+<li>Físicos: dores de cabeça, insônia, problemas digestivos, tensão muscular</li>
+<li>Profissionais: queda na produtividade, erros frequentes, desmotivação, alta rotatividade</li>
+<li>Organizacionais: clima tóxico, fofocas, divisões na equipe, processos trabalhistas</li>
 </ul>`,
       exemplos: `<ul>
-<li><strong>Varejo:</strong> gerente que chama funcionários de "inúteis" e "burros" em reuniões de equipe quando as metas não são batidas</li>
-<li><strong>Construção:</strong> mestre de obras que determina que a equipe não deve ajudar nem conversar com um trabalhador específico que questionou suas ordens</li>
-<li><strong>Escritório:</strong> colega que sistematicamente omite o colaborador de e-mails importantes e atribui os sucessos da equipe a si mesmo nas reuniões com a liderança</li>
-<li><strong>Hospital:</strong> médico que humilha residentes em frente a pacientes como "método pedagógico", criando ambiente de terror psicológico</li>
+<li>Gerente que chama funcionários de "inúteis" em reuniões de equipe quando as metas não são batidas</li>
+<li>Colega que sistematicamente omite outro colaborador de e-mails importantes e atribui os sucessos a si mesmo</li>
+<li>Superior que faz comentários sobre o corpo de uma funcionária e a convida insistentemente para sair</li>
+<li>Grupo de colegas que para de conversar com alguém que questionou uma decisão, criando isolamento deliberado</li>
+<li>Lider que expõe publicamente os piores resultados individuais em reuniões gerais como "incentivo"</li>
 </ul>`,
       impactos: `<ul>
 <li>Transtorno de Estresse Pós-Traumático (TEPT) ocupacional</li>
-<li>Depressão grave e risco de suicídio</li>
-<li>Síndrome do pânico</li>
+<li>Depressão grave e risco aumentado de ideação suicida</li>
+<li>Síndrome do pânico e transtornos de ansiedade</li>
 <li>Doenças psicossomáticas graves</li>
-<li>Danos à carreira e à reputação profissional</li>
-<li>Impacto familiar intenso pela mudança de comportamento da vítima</li>
+<li>Danos à carreira e à reputação profissional da vítima</li>
+<li>Impacto familiar intenso pela mudança de comportamento causada pelo sofrimento</li>
 </ul>`,
       o_que_fazer: `<ul>
-<li><strong>Para a vítima:</strong> documente tudo com datas, horários, testemunhas e o que foi dito — essa documentação é fundamental em qualquer processo</li>
-<li><strong>Para a vítima:</strong> busque suporte médico e psicológico — o assédio causa adoecimento real que precisa de tratamento</li>
-<li><strong>Para a vítima:</strong> denuncie ao canal de ética, RH, CIPA, sindicato ou Ministério do Trabalho — o silêncio perpetua o abuso</li>
-<li><strong>Para a organização:</strong> implementar canal de denúncia anônima, investigar todas as denúncias com seriedade e aplicar sanções proporcionais</li>
-<li><strong>Para a organização:</strong> a Lei 14.457/2022 (CIPA) exige que empresas com CIPA tenham canais específicos para denúncia de assédio</li>
+<li><strong>Para a vítima:</strong> documente tudo com datas, horários, testemunhas e o que foi dito, essa documentação é fundamental em qualquer processo</li>
+<li><strong>Para a vítima:</strong> busque suporte médico e psicológico, o assédio causa adoecimento real que precisa de tratamento</li>
+<li><strong>Para a vítima:</strong> denuncie ao canal de ética, RH, CIPA, sindicato ou Ministério do Trabalho</li>
+<li><strong>Para o lider:</strong> estabelecer e comunicar claramente políticas de respeito e tolerância zero</li>
+<li><strong>Para o lider:</strong> agir imediatamente ao presenciar ou ser informado de qualquer situação, criar ambiente seguro para denúncias</li>
+<li><strong>Para a organização:</strong> a Lei 14.457/2022 exige que empresas com CIPA tenham canais específicos para denúncia de assédio</li>
 </ul>`
     },
     checklistItems: [
       { id: 'am-1', text: 'Já fui humilhado(a) ou ridicularizado(a) por colegas ou gestores no trabalho' },
-      { id: 'am-2', text: 'Sinto que sou tratado(a) de forma diferente e injusta de maneira sistemática' },
-      { id: 'am-3', text: 'Já presenciei ou soube de casos de assédio no meu ambiente de trabalho' },
+      { id: 'am-2', text: 'Já recebi comentários inadequados sobre minha aparência, vida pessoal ou características físicas' },
+      { id: 'am-3', text: 'Já presenciei ou soube de casos de assédio no meu ambiente de trabalho sem que houvesse consequências' },
     ]
   },
   {
-    id: 'discriminacao',
-    title: 'Discriminação e Injustiça Organizacional',
+    id: 'carga-excessiva',
+    title: 'Carga Excessiva de Trabalho',
     icon: '⚡',
-    colorClass: 'amber',
-    category: 'relacional',
-    categoryLabel: 'Relacional',
-    summary: 'Tratamento desigual baseado em características pessoais ou percepção de injustiça nas regras e decisões organizacionais.',
-    tabs: {
-      conceito: `<p>A discriminação no trabalho é o tratamento desfavorável baseado em características pessoais que não têm relação com a capacidade de exercer a função: raça, gênero, idade, orientação sexual, religião, deficiência, origem, estado de saúde, entre outras.</p>
-<p>A injustiça organizacional é um conceito mais amplo que inclui não apenas a discriminação direta, mas também a percepção de que as regras, processos e decisões da organização são injustos ou aplicados de forma inconsistente. Pesquisas mostram que a percepção de injustiça — mesmo que subjetiva — tem impacto significativo na saúde e no comportamento dos trabalhadores, independentemente de haver violação legal formal.</p>`,
-      o_que_e: `<ul>
-<li>Preterição em promoções por critérios não relacionados ao desempenho (ser mulher, ser negro, ser mais velho)</li>
-<li>Remuneração desigual para trabalho equivalente com base em características pessoais</li>
-<li>Piadas, comentários e "brincadeiras" que reforçam estereótipos depreciativos</li>
-<li>Regras aplicadas seletivamente — mais rigidamente para alguns grupos do que outros</li>
-<li>Processos de avaliação e feedback que refletem vieses conscientes ou inconscientes</li>
-<li>Exclusão de oportunidades de desenvolvimento baseada em preconceito</li>
-</ul>`,
-      o_que_nao_e: `<ul>
-<li><strong>Não é qualquer decisão desfavorável:</strong> não ser promovido ou não ter um pedido aprovado não é necessariamente discriminação — o problema é quando o critério é baseado em características pessoais</li>
-<li><strong>Não é apenas discriminação explícita:</strong> a discriminação pode ser sutil, estrutural ou inconsciente — e ainda assim causar dano</li>
-<li><strong>Não é sensibilidade excessiva:</strong> identificar padrões de tratamento diferenciado é uma percepção legítima que merece investigação séria</li>
-</ul>`,
-      como_se_manifesta: `<ul>
-<li>Sensação persistente de precisar trabalhar duas vezes mais para ser reconhecido(a) igualmente</li>
-<li>Raiva, ressentimento e desconfiança em relação à liderança e à organização</li>
-<li>Desengajamento: por que se esforçar mais se as regras não são justas?</li>
-<li>Isolamento: evitar interações sociais para não se expor a situações discriminatórias</li>
-<li>Impacto na autoestima e na autoimagem profissional</li>
-<li>Estresse crônico pela vigilância constante necessária para navegar ambientes discriminatórios</li>
-</ul>`,
-      exemplos: `<ul>
-<li><strong>Corporativo:</strong> mulher que tem propostas recusadas em reunião e a mesma ideia aceita quando reapresentada por um colega homem</li>
-<li><strong>Tecnologia:</strong> profissional negro que, apesar de qualificação equivalente, nunca é considerado para cargos de liderança na empresa</li>
-<li><strong>Saúde:</strong> trabalhador mais velho afastado de treinamentos "porque já vai se aposentar em breve", perdendo desenvolvimento profissional</li>
-<li><strong>Varejo:</strong> funcionário com deficiência física alocado em tarefas claramente abaixo de sua capacidade por suposição equivocada sobre suas limitações</li>
-</ul>`,
-      impactos: `<ul>
-<li>Comprometimento da identidade e da autoestima profissional</li>
-<li>Ansiedade social e depressão</li>
-<li>Estresse crônico pela "carga do preconceito" — o esforço constante de lidar com discriminação é esgotante</li>
-<li>Limitação de carreira e perdas econômicas concretas</li>
-<li>Desengajamento organizacional e alta rotatividade</li>
-<li>Impacto na saúde física: hipertensão, doenças relacionadas ao estresse</li>
-</ul>`,
-      o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> documente situações específicas — datas, decisões, comparações concretas com colegas em situação similar</li>
-<li><strong>Para o trabalhador:</strong> conheça seus direitos: a Constituição Federal (art. 5º), a CLT e diversas leis específicas proíbem a discriminação no trabalho</li>
-<li><strong>Para o trabalhador:</strong> sindicatos, Ministério Público do Trabalho e Defensoria Pública são recursos disponíveis</li>
-<li><strong>Para a organização:</strong> realizar auditorias de equidade (remuneração, promoções, avaliações) com dados desagregados por gênero, raça, idade</li>
-<li><strong>Para a organização:</strong> treinamento em viés inconsciente para líderes com poder de decisão sobre pessoas</li>
-</ul>`
-    },
-    checklistItems: [
-      { id: 'di-1', text: 'Sinto que características pessoais (gênero, raça, idade...) afetam negativamente minha trajetória na empresa' },
-      { id: 'di-2', text: 'As regras e decisões na minha empresa parecem ser aplicadas de forma injusta' },
-      { id: 'di-3', text: 'Já ouvi comentários ou piadas preconceituosas no ambiente de trabalho' },
-    ]
-  },
-  {
-    id: 'trabalho-emocional',
-    title: 'Trabalho Emocional e Desgaste Emocional',
-    icon: '💔',
-    colorClass: 'purple',
+    colorClass: 'teal',
     category: 'carga',
     categoryLabel: 'Carga e Demanda',
-    summary: 'O esforço de gerenciar as próprias emoções para atender às expectativas do trabalho — sorrir quando está exausto, manter a calma sob agressão.',
+    summary: 'Volume de trabalho desproporcional à capacidade individual ou da equipe, incluindo prazos irreais, acúmulo de funções e expectativas impossíveis.',
     tabs: {
-      conceito: `<p>Trabalho emocional é o gerenciamento das emoções para cumprir as exigências afetivas do trabalho: sorrir para o cliente mesmo após uma situação difícil, manter a calma diante de um paciente agressivo, transmitir entusiasmo quando se está esgotado. O termo foi criado pela socióloga Arlie Hochschild na década de 1980 e é hoje um campo consolidado de pesquisa em saúde ocupacional.</p>
-<p>O trabalho emocional existe em diferentes intensidades em quase todas as profissões, mas é especialmente intenso em funções de atendimento, saúde, educação e serviços sociais. O problema não é a existência do trabalho emocional em si, mas sua intensidade, duração e a ausência de recursos para lidar com ele — o que leva ao <strong>desgaste emocional</strong>, componente central do burnout.</p>`,
+      conceito: `<p>A carga excessiva de trabalho ocorre quando o volume de trabalho é desproporcional à capacidade individual ou da equipe. Isso inclui prazos irreais, acúmulo de funções, falta de recursos adequados e expectativas impossíveis de serem atendidas dentro do tempo e condições disponíveis.</p>
+<p>Diferente de períodos pontuais de maior trabalho, que são normais em qualquer carreira, esse fator de risco se caracteriza pela cronicidade: a sobrecarga deixa de ser exceção e passa a ser a regra. A NR-1 reconhece esse padrão como fator de risco psicossocial porque gera estados prolongados de estresse que comprometem o bem-estar físico e mental.</p>`,
       o_que_e: `<ul>
-<li>Suprimir emoções negativas legítimas (raiva, tristeza, medo) para apresentar uma "fachada" emocional exigida pelo papel</li>
-<li>Absorver a angústia, a agressividade e o sofrimento de clientes, pacientes ou alunos como parte do trabalho</li>
-<li>Dissonância emocional prolongada: sentir uma coisa por dentro e ter que demonstrar outra por fora</li>
-<li>Responsabilidade de "regular" as emoções dos outros (acalmar clientes irritados, consolar pacientes, motivar alunos desmotivados)</li>
-<li>Exigência de "positividade tóxica": proibição implícita ou explícita de demonstrar emoções negativas no ambiente de trabalho</li>
+<li>Volume desproporcional: mais de 60 horas semanais regulares, trabalhar fins de semana constantemente</li>
+<li>Prazos impossíveis: "Preciso para ontem", projetos de 1 mês para entregar em 1 semana</li>
+<li>Acúmulo de funções: fazer trabalho de 2 ou 3 pessoas, assumir responsabilidades de colegas ausentes sem compensação</li>
+<li>Falta de recursos: sistemas lentos, equipamentos inadequados, falta de pessoal</li>
+<li>Interrupções constantes: reuniões excessivas, demandas urgentes que não são urgentes</li>
+<li>Multitarefas extremas: gerenciar mais de 10 projetos simultâneos, atender múltiplas prioridades ao mesmo tempo</li>
+<li>Trabalho fora do horário: e-mails à noite e fins de semana, ligações em horários pessoais</li>
+<li>Metas inalcançáveis: aumentar vendas em 300%, reduzir custos em 50% mantendo a mesma qualidade</li>
+<li>Pressão por disponibilidade: "Preciso que esteja sempre disponível", "Não pode tirar férias agora"</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Não é "drama" ou falta de profissionalismo:</strong> reconhecer o desgaste emocional do trabalho é reconhecer a realidade de profissões emocionalmente exigentes</li>
-<li><strong>Não é exclusivo de profissões da área de saúde:</strong> trabalhadores de callcenter, caixas de supermercado, professores, assistentes sociais, vendedores — todos realizam trabalho emocional</li>
-<li><strong>Não é resolvido com "mais resiliência":</strong> a resiliência individual tem limite; o desgaste crônico requer mudanças nas condições de trabalho, não apenas no trabalhador</li>
+<li><strong>Nao e apenas muito trabalho:</strong> um projeto intenso com prazo claro e temporário é diferente de sobrecarga crônica sem perspectiva de alívio</li>
+<li><strong>Nao e preguiça ou falta de organização:</strong> quando a carga estruturalmente excede a capacidade da função, o problema é organizacional, não individual</li>
+<li><strong>Nao e problema apenas de quem reclama:</strong> trabalhadores que nunca reclamam podem estar igualmente sobrecarregados e em maior risco por não buscar ajuda</li>
 </ul>`,
       como_se_manifesta: `<ul>
-<li>Exaustão emocional: sensação de estar "seco por dentro", sem energia emocional para nada</li>
-<li>Despersonalização: criar distância emocional dos clientes/pacientes/alunos como mecanismo de defesa ("virar uma máquina")</li>
-<li>Cinismo crescente em relação ao próprio trabalho e às pessoas que atende</li>
-<li>Dificuldade de deixar o trabalho para trás — as emoções do dia se "grudam" e são levadas para casa</li>
-<li>Redução da empatia: a capacidade de se importar começa a diminuir progressivamente</li>
-<li>Sensação de vazio e falta de sentido mesmo em profissões que antes eram fonte de satisfação</li>
+<li>Físicos: exaustão crônica, dores musculares, problemas cardíacos, sistema imunológico baixo</li>
+<li>Mentais: burnout, ansiedade, dificuldade de concentração, esquecimentos frequentes</li>
+<li>Comportamentais: irritabilidade, isolamento social, uso de álcool ou medicamentos como escape</li>
+<li>Familiares: conflitos em casa, ausência em eventos importantes, relacionamentos prejudicados</li>
+<li>Profissionais: queda na qualidade, erros por pressa, absenteísmo, rotatividade alta</li>
+<li>Organizacionais: clima de estresse, competição destrutiva, perda de talentos</li>
 </ul>`,
       exemplos: `<ul>
-<li><strong>UTI:</strong> enfermeiro que perdeu dois pacientes na mesma semana e no dia seguinte precisa dar suporte emocional à família de outro paciente em estado crítico, sem espaço para processar o próprio luto</li>
-<li><strong>Callcenter:</strong> atendente que recebe xingamentos de clientes insatisfeitos durante toda a jornada e é avaliado negativamente se demonstrar qualquer emoção negativa no atendimento</li>
-<li><strong>Assistência social:</strong> técnica que atende diariamente situações de violência doméstica, exploração infantil e extrema pobreza sem supervisão clínica para processar o impacto</li>
-<li><strong>Varejo de luxo:</strong> vendedor que deve ser impecavelmente gentil com clientes que frequentemente o tratam com desdém, enquanto é pressionado por metas agressivas</li>
+<li>Enfermeira responsável por 20 leitos sozinha no plantão, acumulando funções que deveriam ser de uma equipe de três</li>
+<li>Professor com 5 turmas por dia, planejamento, correções, relatórios e reuniões, tudo fora do horário de aula</li>
+<li>Analista que cobre licença de colega sem redução das próprias metas, respondendo e-mails até meia-noite</li>
+<li>Gerente de loja que acumula função de operador de caixa, estoquista e atendimento nos dias de folga da equipe</li>
+<li>Desenvolvedor em startup que recebe mensagens do chefe às 23h com expectativa implícita de resposta imediata</li>
 </ul>`,
       impactos: `<ul>
-<li>Burnout — o desgaste emocional é a sua dimensão mais definidora</li>
-<li>Fadiga compassiva (compassion fatigue) em profissões de cuidado</li>
-<li>Depressão e perda de sentido na vida profissional</li>
-<li>Problemas nos relacionamentos pessoais pela exaustão emocional trazida do trabalho</li>
-<li>Abandono da profissão: alta rotatividade em áreas de saúde, educação e assistência social</li>
-<li>Risco de erro profissional grave pela diminuição da atenção e do cuidado com o outro</li>
+<li>Burnout (Síndrome de Esgotamento Profissional), reconhecida pela OMS como doença ocupacional</li>
+<li>Transtornos de ansiedade e síndrome do pânico</li>
+<li>Depressão relacionada ao trabalho</li>
+<li>Hipertensão arterial e maior risco cardiovascular</li>
+<li>Distúrbios do sono (insônia, sono não reparador)</li>
+<li>Erros graves e acidentes de trabalho por déficit de atenção causado pela fadiga</li>
 </ul>`,
       o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> busque supervisão clínica, grupos de apoio entre pares ou psicoterapia — processar o que foi absorvido emocionalmente é necessidade, não luxo</li>
-<li><strong>Para o trabalhador:</strong> crie rituais de transição entre trabalho e vida pessoal: uma caminhada, um banho, uma música — algo que sinalize ao cérebro que o papel profissional foi encerrado</li>
-<li><strong>Para a organização:</strong> oferecer suporte psicológico estrutural para funções com alta carga emocional (não apenas EAP genérico)</li>
-<li><strong>Para a organização:</strong> reconhecer explicitamente o trabalho emocional como parte da carga de trabalho nas avaliações de risco</li>
-<li><strong>Para a organização:</strong> criar espaços seguros para que profissionais expressem emoções negativas sem julgamento ou penalização</li>
+<li><strong>Para o trabalhador:</strong> registre formalmente as demandas excessivas criando histórico e comunique ao gestor com dados concretos sobre volume e prazos</li>
+<li><strong>Para o trabalhador:</strong> estabeleça e comunique limites claros de disponibilidade, respaldado pela legislação trabalhista</li>
+<li><strong>Para o lider:</strong> distribuir trabalho considerando capacidade real de cada pessoa, definir claramente o que é urgente versus importante</li>
+<li><strong>Para o lider:</strong> redistribuir tarefas quando alguém está sobrecarregado e garantir ferramentas e pessoal adequados</li>
+<li><strong>Para a organização:</strong> realizar mapeamento real de carga de trabalho antes de definir metas e quadro de pessoal</li>
 </ul>`
     },
     checklistItems: [
-      { id: 'te-1', text: 'Preciso "fingir" emoções no trabalho que não correspondem ao que realmente sinto' },
-      { id: 'te-2', text: 'Me sinto emocionalmente esgotado(a) ao final do dia de trabalho com frequência' },
-      { id: 'te-3', text: 'Tenho dificuldade de me importar com as pessoas que atendo como antes me importava' },
+      { id: 'ce-1', text: 'Com frequência não consigo terminar minhas tarefas dentro do horário de trabalho' },
+      { id: 'ce-2', text: 'Sinto que tenho trabalho suficiente para duas ou mais pessoas' },
+      { id: 'ce-3', text: 'Recebo mensagens ou ligações de trabalho fora do horário com expectativa de resposta' },
     ]
   },
   {
-    id: 'falta-significado',
-    title: 'Falta de Significado e Reconhecimento',
+    id: 'falta-reconhecimento',
+    title: 'Falta de Reconhecimento',
     icon: '🌑',
-    colorClass: 'teal',
+    colorClass: 'amber',
     category: 'organizacional',
     categoryLabel: 'Organizacional',
-    summary: 'Quando o trabalho perde o sentido, o esforço não é reconhecido e a contribuição individual se torna invisível.',
+    summary: 'Ausência de valorização, feedback positivo ou recompensas pelo trabalho realizado, incluindo invisibilidade dos esforços e desproporção entre contribuição e retorno.',
     tabs: {
-      conceito: `<p>A busca por significado é uma necessidade humana fundamental, e o trabalho é um dos principais lugares onde as pessoas buscam concretizá-la. Quando o trabalho não oferece propósito — quando a pessoa não enxerga o impacto do que faz, não se sente valorizada por sua contribuição ou sente que sua função poderia ser exercida por qualquer um — ocorre um esvaziamento motivacional que vai muito além da desmotivação passageira.</p>
-<p>O reconhecimento, por sua vez, é a confirmação de que o esforço e a competência do trabalhador são vistos e valorizados. Sua ausência crônica não é apenas uma questão de satisfação: ela mina a identidade profissional e é um preditor robusto de burnout e de abandono da função.</p>`,
+      conceito: `<p>A falta de reconhecimento engloba a ausência de valorização, feedback positivo ou recompensas pelo trabalho realizado. Inclui falta de crescimento profissional, invisibilidade dos esforços e desproporção entre a contribuição feita e o retorno recebido.</p>
+<p>O reconhecimento é a confirmação de que o esforço e a competência do trabalhador são vistos e valorizados. Sua ausência crônica não é apenas uma questão de satisfação: ela mina a identidade profissional e é um preditor robusto de burnout e de abandono da função.</p>`,
       o_que_e: `<ul>
-<li>Não enxergar a conexão entre o próprio trabalho e um propósito maior — como ele contribui para algo que importa</li>
-<li>Esforço e resultados consistentemente ignorados pela liderança, sem feedback positivo nem reconhecimento</li>
-<li>Funções automatizadas ou fragmentadas a ponto de perder qualquer desafio ou criatividade</li>
-<li>Méritos atribuídos a outros ou à equipe sem dar crédito às contribuições individuais</li>
-<li>Progressão de carreira estagnada sem perspectiva ou critérios claros</li>
-<li>Sensação de ser "substituível" — de que qualquer pessoa faria exatamente o mesmo trabalho</li>
+<li>Trabalho invisível: esforços não reconhecidos, contribuições não mencionadas</li>
+<li>Falta de feedback positivo: só receber críticas, nunca elogios ou reconhecimento genuíno</li>
+<li>Promoções injustas: outros sendo promovidos sem mérito claro, critérios opacos</li>
+<li>Salário defasado: remuneração abaixo do mercado, sem reajustes há anos</li>
+<li>Crédito roubado: chefe levando crédito por ideias ou trabalho da equipe</li>
+<li>Comparações negativas: "Fulano faz melhor", "Na empresa X fazem diferente"</li>
+<li>Desenvolvimento negado: não ter acesso a treinamentos, cursos e oportunidades de crescimento</li>
+<li>Comunicação unilateral: nunca ser consultado, opiniões não valorizadas</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Não é necessidade de elogios constantes:</strong> reconhecimento não é halago vazio — é feedback genuíno e visibilidade justa das contribuições</li>
-<li><strong>Não é exclusivamente questão de remuneração:</strong> pessoas bem remuneradas também sofrem pela falta de significado e reconhecimento — o dinheiro não substitui o sentido</li>
-<li><strong>Não é problema apenas de pessoas que escolheram "a profissão errada":</strong> qualquer trabalho pode perder o significado quando as condições organizacionais o tornam alienante</li>
+<li><strong>Nao e necessidade de elogios constantes:</strong> reconhecimento não é halago vazio, é feedback genuíno e visibilidade justa das contribuições</li>
+<li><strong>Nao e exclusivamente questão de remuneração:</strong> pessoas bem remuneradas também sofrem pela falta de reconhecimento, o dinheiro não substitui o sentido</li>
+<li><strong>Nao e problema apenas de pessoas que escolheram "a profissão errada":</strong> qualquer trabalho pode perder o significado quando as condições organizacionais o tornam alienante</li>
 </ul>`,
       como_se_manifesta: `<ul>
-<li>Tédio crônico e dificuldade de engajamento com as tarefas</li>
-<li>Questionamento frequente sobre "por que estou fazendo isso?"</li>
-<li>Queda na qualidade do trabalho por falta de motivação intrínseca</li>
-<li>Inveja dos colegas que parecem encontrar mais sentido no que fazem</li>
-<li>Fantasias frequentes de mudar de carreira, mesmo sem plano concreto</li>
-<li>Sensação de que os anos estão passando e o trabalho não está deixando nenhuma marca</li>
+<li>Motivacionais: desmotivação crescente, perda de engajamento, fazer o mínimo necessário</li>
+<li>Emocionais: frustração, ressentimento, baixa autoestima, sensação de inutilidade</li>
+<li>Comportamentais: procurar outras oportunidades, falar mal da empresa, sabotagem sutil</li>
+<li>Relacionais: conflitos com colegas, competição destrutiva, inveja</li>
+<li>Produtivos: queda na qualidade, falta de iniciativa, resistência a mudanças</li>
+<li>Organizacionais: alta rotatividade, dificuldade para reter talentos, clima negativo</li>
 </ul>`,
       exemplos: `<ul>
-<li><strong>TI:</strong> desenvolvedor talentoso alocado há dois anos apenas na manutenção de sistemas legados sem nunca ser incluído em projetos novos, sem feedback sobre seu desempenho</li>
-<li><strong>Saúde:</strong> médica generalista em UBS que sente que sua formação e competência são subutilizadas em atendimentos cada vez mais rápidos e protocolizados</li>
-<li><strong>Administrativo:</strong> analista que sugeriu melhorias no processo três vezes, nunca recebeu resposta, e viu a mesma ideia ser implementada quando proposta pelo gestor</li>
-<li><strong>Educação:</strong> professor que não recebe feedback algum sobre seu trabalho há anos — nem positivo nem negativo — e sente que ninguém perceberia diferença se ele fosse substituído</li>
+<li>Desenvolvedor talentoso alocado há dois anos apenas em manutenção de sistemas antigos, nunca incluído em projetos novos</li>
+<li>Analista que sugeriu melhorias no processo três vezes, nunca recebeu resposta, e viu a mesma ideia ser implementada quando proposta pelo gestor</li>
+<li>Professor que não recebe feedback algum sobre seu trabalho há anos, nem positivo nem negativo</li>
+<li>Profissional que bate metas todos os meses mas nunca recebe um reconhecimento público ou privado por isso</li>
 </ul>`,
       impactos: `<ul>
 <li>Desengajamento profundo e presenteísmo crônico</li>
 <li>Burnout na dimensão de redução da realização pessoal</li>
 <li>Depressão existencial ligada ao trabalho</li>
-<li>Alta rotatividade — talentos saem em busca de ambientes que os valorizem</li>
+<li>Alta rotatividade: talentos saem em busca de ambientes que os valorizem</li>
 <li>Queda na qualidade e produtividade em toda a organização</li>
-<li>Absenteísmo como fuga inconsciente do ambiente</li>
 </ul>`,
       o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> articule ativamente seu interesse em projetos com mais sentido — mostre o que você quer, não apenas o que não quer</li>
-<li><strong>Para o trabalhador:</strong> busque conexões com o impacto do seu trabalho — converse com quem usa o que você produz ou entrega</li>
-<li><strong>Para a organização:</strong> institucionalizar práticas de reconhecimento regular — não apenas em avaliações anuais</li>
-<li><strong>Para a organização:</strong> garantir que líderes dêem feedback positivo específico e concreto, não apenas genérico</li>
-<li><strong>Para a organização:</strong> criar oportunidades de job crafting — permitir que profissionais adaptem aspectos de sua função de acordo com seus pontos fortes e motivações</li>
+<li><strong>Para o trabalhador:</strong> articule ativamente seu interesse em projetos com mais visibilidade e mostre o que você quer, não apenas o que não quer</li>
+<li><strong>Para o lider:</strong> reconhecer regularmente com feedback positivo específico e frequente, não apenas em avaliações anuais</li>
+<li><strong>Para o lider:</strong> celebrar conquistas individuais e da equipe publicamente, sempre dar crédito a quem fez o trabalho</li>
+<li><strong>Para o lider:</strong> oferecer oportunidades reais de crescimento e desenvolvimento, não apenas promessas</li>
+<li><strong>Para a organização:</strong> criar critérios claros e transparentes para promoções e recompensas</li>
 </ul>`
     },
     checklistItems: [
-      { id: 'fs-1', text: 'Com frequência me pergunto qual é o sentido do que faço no trabalho' },
-      { id: 'fs-2', text: 'Meu esforço e minhas contribuições raramente são reconhecidos' },
-      { id: 'fs-3', text: 'Sinto que sou completamente substituível na minha função' },
+      { id: 'fr-1', text: 'Meu esforço e minhas contribuições raramente ou nunca são reconhecidos' },
+      { id: 'fr-2', text: 'Sinto que minha progressão na carreira é injusta em comparação com colegas' },
+      { id: 'fr-3', text: 'Nunca ou raramente recebo feedback positivo, apenas críticas' },
     ]
   },
   {
-    id: 'condicoes-fisicas',
-    title: 'Condições Físicas e Ambientais Inadequadas',
-    icon: '🏭',
-    colorClass: 'teal',
+    id: 'clima-organizacional-negativo',
+    title: 'Clima Organizacional Negativo',
+    icon: '🌩️',
+    colorClass: 'purple',
     category: 'organizacional',
     categoryLabel: 'Organizacional',
-    summary: 'Quando o ambiente físico de trabalho gera desconforto, insalubridade ou riscos que afetam a saúde mental além da física.',
+    summary: 'Ambiente de trabalho caracterizado por desconfiança, fofocas, competição destrutiva, falta de colaboração e ausência de senso de propósito compartilhado.',
     tabs: {
-      conceito: `<p>As condições físicas e ambientais do trabalho têm impacto direto sobre a saúde mental, não apenas física. Ambiente barulhento, iluminação inadequada, temperatura extrema, falta de privacidade, superlotação, precariedade de equipamentos e exposição a substâncias tóxicas geram estresse psicológico crônico que se soma a outros riscos psicossociais.</p>
-<p>A NR-1 reconhece que as condições do ambiente físico de trabalho devem ser incluídas no gerenciamento de riscos psicossociais porque o estressor ambiental — mesmo quando não provoca doença física direta — é processado pelo organismo como ameaça, ativando respostas de estresse que, se persistentes, levam ao adoecimento mental.</p>`,
+      conceito: `<p>O clima organizacional negativo é caracterizado por um ambiente de trabalho marcado por desconfiança, fofocas, competição destrutiva, falta de colaboração, comunicação tóxica e ausência de senso de propósito compartilhado.</p>
+<p>O clima organizacional não é um elemento abstrato: ele é vivido nas interações do cotidiano, nas conversas de corredor, nas reuniões e nos e-mails. Quando negativo, contamina progressivamente a saúde mental de toda a equipe, independentemente da solidez dos processos formais da organização.</p>`,
       o_que_e: `<ul>
-<li>Ruído excessivo e constante que impede concentração e comunicação</li>
-<li>Espaço físico inadequado: falta de privacidade, superlotação, impossibilidade de trabalhar com concentração</li>
-<li>Temperatura extrema ou variável sem controle (calor intenso em ambiente externo, ar condicionado excessivo em escritórios)</li>
-<li>Equipamentos deficientes ou inseguros que geram insegurança e ineficiência constantes</li>
-<li>Iluminação inadequada gerando fadiga visual e dores de cabeça</li>
-<li>Precariedade geral que comunica desvalorização: espaço sujo, sem manutenção, sem condições mínimas de dignidade</li>
-<li>Exposição à violência no ambiente (atendimento em locais de risco, abordagem de populações em situação de vulnerabilidade)</li>
+<li>Fofocas constantes: comentários maldosos sobre colegas, espalhar rumores sem base</li>
+<li>Competição destrutiva: sabotagem entre colegas, esconder informações importantes</li>
+<li>Desconfiança generalizada: suspeitar de intenções, não compartilhar ideias por medo de cópia</li>
+<li>Comunicação tóxica: ironias, sarcasmo, comentários passivo-agressivos frequentes</li>
+<li>Panelas e grupinhos: exclusão de certos membros, favoritismo evidente</li>
+<li>Ambiente de medo: medo de errar, de falar, de sugerir, de ser diferente</li>
+<li>Cinismo generalizado: "Nada funciona aqui", "A empresa não se importa", descrença coletiva</li>
+<li>Conflitos não resolvidos: tensões antigas que nunca foram tratadas e se acumulam</li>
 </ul>`,
       o_que_nao_e: `<ul>
-<li><strong>Não é exigência de luxo:</strong> condições adequadas significam o mínimo para trabalhar com saúde e dignidade — não escritório de alto padrão</li>
-<li><strong>Não é apenas risco para quem trabalha em fábrica ou obra:</strong> escritórios e hospitais também podem ter condições ambientais inadequadas com sério impacto psicológico</li>
-<li><strong>Não é "frescura":</strong> o corpo humano tem limites fisiológicos e psicológicos reais para suportar condições ambientais adversas</li>
+<li><strong>Nao e apenas um dia ruim:</strong> o clima organizacional negativo é um padrão persistente, não episódios isolados de tensão</li>
+<li><strong>Nao e culpa de um único indivíduo:</strong> embora líderes tenham papel fundamental, o clima negativo é um fenômeno coletivo que envolve múltiplos atores</li>
+<li><strong>Nao e inevitável:</strong> climas negativos podem ser revertidos com liderança consistente e ações estruturais adequadas</li>
 </ul>`,
       como_se_manifesta: `<ul>
-<li>Dificuldade de concentração e maior incidência de erros por interferência ambiental</li>
-<li>Irritabilidade e impaciência elevadas associadas ao desconforto ambiental</li>
-<li>Ansiedade relacionada à insegurança dos equipamentos ou do ambiente</li>
-<li>Exaustão física e mental acelerada pelo esforço de trabalhar em condições adversas</li>
-<li>Sensação de desvalorização e descaso pela organização</li>
-<li>Queixas físicas frequentes: dores de cabeça, problemas auditivos, problemas musculoesqueléticos</li>
+<li>Relacionais: isolamento, conflitos frequentes, falta de confiança mútua entre colegas</li>
+<li>Comunicacionais: informações distorcidas, mal-entendidos constantes, silêncio em reuniões</li>
+<li>Motivacionais: desengajamento, falta de iniciativa, resistência passiva a qualquer mudança</li>
+<li>Produtivos: baixa colaboração, retrabalho, projetos que não avançam</li>
+<li>Emocionais: estresse, ansiedade, depressão, irritabilidade constante</li>
+<li>Organizacionais: alta rotatividade, dificuldade para contratar e reter, imagem negativa no mercado</li>
 </ul>`,
       exemplos: `<ul>
-<li><strong>Call center:</strong> operadores em ambiente com ruído constante de dezenas de conversas simultâneas, sem separação acústica, processando informações complexas sob pressão</li>
-<li><strong>Obra:</strong> trabalhador exposto a calor intenso sem estrutura de descanso à sombra, água ou alimentação adequados — condições que aumentam o risco de acidentes além do adoecimento</li>
-<li><strong>Home office:</strong> trabalhador remoto sem espaço físico adequado em casa — trabalhando da cama, sem cadeira ergonômica, no mesmo espaço onde vive e dorme, sem separação entre trabalho e descanso</li>
-<li><strong>Hospital:</strong> profissional de saúde sem local para pausas, sem espaço para se alimentar adequadamente, em corredor barulhento, lidando com situações de alto risco emocional sem nenhuma estrutura de apoio físico</li>
+<li>Equipe onde ninguém compartilha informações voluntariamente porque "cada um cuida do próprio emprego"</li>
+<li>Empresa onde as pessoas só falam bem da organização publicamente mas criticam tudo em conversas privadas</li>
+<li>Ambiente onde novas ideias são sistematicamente recebidas com ceticismo e frases como "sempre foi assim"</li>
+<li>Setor onde existem grupos fechados que excluem sistematicamente certos colegas de conversas e decisões</li>
 </ul>`,
       impactos: `<ul>
-<li>Estresse crônico pela exposição contínua a estressores ambientais</li>
-<li>Fadiga cognitiva e comprometimento da função executiva</li>
-<li>Doenças ocupacionais físicas com componente psicossomático (LER/DORT, perda auditiva, doenças respiratórias)</li>
-<li>Ansiedade e irritabilidade crônicas</li>
-<li>Sensação de desvalorização que alimenta ressentimento organizacional</li>
-<li>Maior risco de acidentes por comprometimento da atenção</li>
+<li>Estresse crônico por exposição contínua a ambiente hostil</li>
+<li>Ansiedade e depressão relacionadas ao trabalho</li>
+<li>Comprometimento da criatividade e da inovação coletiva</li>
+<li>Perda de talentos para concorrentes com melhor cultura</li>
+<li>Aumento de processos trabalhistas e reclamações</li>
 </ul>`,
       o_que_fazer: `<ul>
-<li><strong>Para o trabalhador:</strong> registre formalmente as condições inadequadas — e-mail, CIPA, SESMT, livro de ocorrências — criando histórico para ação</li>
-<li><strong>Para o trabalhador:</strong> conheça as NRs específicas para seu setor (NR-15 para insalubridade, NR-17 para ergonomia) — elas definem padrões mínimos exigíveis</li>
-<li><strong>Para o trabalhador:</strong> em caso de risco grave e iminente, a CLT (art. 483) prevê possibilidade de interrupção do trabalho sem penalização</li>
-<li><strong>Para a organização:</strong> incluir avaliação das condições físicas no mapeamento de riscos psicossociais da NR-1</li>
-<li><strong>Para a organização:</strong> tratar manutenção e melhoria do ambiente físico como investimento em saúde, não como custo evitável</li>
+<li><strong>Para o lider:</strong> ser exemplo de positividade e colaboração, combater fofocas sem participar nem permitir conversas destrutivas</li>
+<li><strong>Para o lider:</strong> promover colaboração com projetos em equipe, resolver conflitos rapidamente antes que se tornem tóxicos</li>
+<li><strong>Para o lider:</strong> comunicar com transparência, criar rituais positivos de celebração e integração</li>
+<li><strong>Para o trabalhador:</strong> não alimentar fofocas e comunicação tóxica, mesmo quando há pressão do grupo</li>
+<li><strong>Para a organização:</strong> realizar pesquisas de clima com regularidade e tomar ações concretas baseadas nos resultados</li>
 </ul>`
     },
     checklistItems: [
-      { id: 'cf2-1', text: 'Meu ambiente de trabalho é barulhento ou desconfortável de forma que atrapalha meu trabalho' },
-      { id: 'cf2-2', text: 'Trabalho com equipamentos defeituosos ou precários com frequência' },
-      { id: 'cf2-3', text: 'As condições físicas do meu local de trabalho me geram preocupação com minha saúde' },
+      { id: 'co-1', text: 'O ambiente no meu trabalho é marcado por fofocas e competição destrutiva' },
+      { id: 'co-2', text: 'Sinto que não posso confiar nas intenções dos meus colegas ou liderança' },
+      { id: 'co-3', text: 'Novas ideias e sugestões raramente são bem recebidas no meu ambiente de trabalho' },
+    ]
+  },
+  {
+    id: 'falta-autonomia',
+    title: 'Falta de Autonomia',
+    icon: '🔒',
+    colorClass: 'teal',
+    category: 'organizacional',
+    categoryLabel: 'Organizacional',
+    summary: 'Ausência de poder de decisão sobre o próprio trabalho, incluindo microgerenciamento excessivo, falta de flexibilidade e controle rígido sobre métodos.',
+    tabs: {
+      conceito: `<p>A falta de autonomia refere-se à ausência de poder de decisão sobre o próprio trabalho. Inclui microgerenciamento excessivo, falta de flexibilidade, controle rígido sobre métodos e horários, e impossibilidade de influenciar aspectos relevantes da própria função.</p>
+<p>O controle sobre o trabalho é um fator protetor fundamental para a saúde mental. Quando as pessoas têm autonomia, conseguem adaptar as demandas às suas capacidades, gerenciar o estresse de forma ativa e encontrar significado no que fazem. Sua ausência cria uma sensação de impotência que, combinada com alta demanda, representa um dos maiores fatores de risco para doenças relacionadas ao trabalho.</p>`,
+      o_que_e: `<ul>
+<li>Microgerenciamento: controlar cada passo, pedir relatórios constantes, não confiar nas decisões da equipe</li>
+<li>Decisões centralizadas: tudo precisa de aprovação, mesmo decisões simples e rotineiras</li>
+<li>Métodos rígidos: "Tem que ser exatamente assim", não aceitar sugestões de melhoria</li>
+<li>Horários inflexíveis: não permitir ajustes mesmo quando seria possível e benéfico para todos</li>
+<li>Controle excessivo: monitorar telas, cronometrar pausas, rastrear localização a todo momento</li>
+<li>Burocracia desnecessária: processos complexos para tarefas simples sem justificativa real</li>
+<li>Hierarquia rígida: não poder falar com outros níveis, comunicação permitida apenas vertical</li>
+<li>Criatividade limitada: "Não invente", "Faça como sempre foi feito"</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e ter regras e processos:</strong> toda organização tem procedimentos necessários, o problema é quando eles eliminam completamente o julgamento e a iniciativa do trabalhador</li>
+<li><strong>Nao e ter um gestor próximo:</strong> liderança presente e acessível é diferente de microgerenciamento, um bom gestor orienta sem controlar cada detalhe</li>
+<li><strong>Nao e problema apenas de funções técnicas:</strong> qualquer trabalhador precisa de algum grau de autonomia para se sentir respeitado profissionalmente</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Motivacionais: desmotivação, falta de engajamento, sensação de inutilidade e de ser "apenas uma peça"</li>
+<li>Criativos: perda de iniciativa, não sugerir melhorias, conformismo progressivo</li>
+<li>Emocionais: frustração, sensação de infantilização, baixa autoestima profissional</li>
+<li>Comportamentais: dependência excessiva, não tomar decisões, esperar ordens para tudo</li>
+<li>Produtivos: lentidão nos processos, falta de agilidade, perda de oportunidades</li>
+<li>Desenvolvimento: estagnação profissional, não desenvolver competências de liderança</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Atendente que deve seguir roteiro palavra por palavra, sem poder adaptar a linguagem ao cliente mesmo percebendo que não está funcionando</li>
+<li>Motorista rastreado em tempo real com alertas automáticos para cada parada, sem poder ajustar rota mesmo em situações óbvias</li>
+<li>Desenvolvedor sênior que precisa justificar por escrito cada decisão técnica para um gestor sem formação na área</li>
+<li>Profissional que precisa pedir autorização até para comprar material de escritório de baixo custo</li>
+</ul>`,
+      impactos: `<ul>
+<li>Estresse crônico e síndrome de esgotamento</li>
+<li>Depressão e sensação de ineficácia profissional</li>
+<li>Alta rotatividade e absenteísmo na equipe</li>
+<li>Hipertensão e doenças cardiovasculares</li>
+<li>Perda de competência prática por falta de uso, o trabalhador perde confiança em si mesmo</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o trabalhador:</strong> proponha conversas sobre autonomia com responsabilidade, mostre que você entende os riscos e tem soluções concretas</li>
+<li><strong>Para o lider:</strong> delegar efetivamente com responsabilidades reais e poder de decisão, confiar na equipe e focar em resultados</li>
+<li><strong>Para o lider:</strong> aceitar diferentes formas de chegar ao mesmo resultado, dar contexto explicando o "porquê" para que possam decidir alinhados</li>
+<li><strong>Para o lider:</strong> eliminar burocracias desnecessárias e criar ambiente seguro para experimentação e aprendizado</li>
+<li><strong>Para a organização:</strong> revisar processos que eliminam desnecessariamente a autonomia</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'fa-1', text: 'Tenho pouca ou nenhuma liberdade para decidir como realizar minhas tarefas' },
+      { id: 'fa-2', text: 'Me sinto monitorado(a) de forma excessiva no trabalho' },
+      { id: 'fa-3', text: 'Preciso pedir autorização até para decisões simples e rotineiras' },
+    ]
+  },
+  {
+    id: 'pressao-metas',
+    title: 'Pressão Excessiva por Metas',
+    icon: '🎯',
+    colorClass: 'amber',
+    category: 'carga',
+    categoryLabel: 'Carga e Demanda',
+    summary: 'Cobrança desproporcional por resultados, metas irreais, pressão constante por performance e consequências desproporcionais por não atingir objetivos.',
+    tabs: {
+      conceito: `<p>A pressão excessiva por metas ocorre quando há cobrança desproporcional por resultados. Inclui metas irreais, pressão constante por performance, foco exclusivo em números sem considerar o bem-estar das pessoas e consequências desproporcionais por não atingir objetivos.</p>
+<p>Metas são instrumentos legítimos de gestão. O problema não é ter metas, mas quando elas são estabelecidas de forma irrealista, usadas como instrumento de pressão emocional ou perseguidas com métodos que sacrificam a saúde das pessoas.</p>`,
+      o_que_e: `<ul>
+<li>Metas impossíveis: aumentar vendas em 500%, reduzir custos em 80% sem reduzir qualidade</li>
+<li>Pressão constante: cobrança diária, reuniões cujo único tema são os números</li>
+<li>Consequências desproporcionais: demissão por não bater meta uma única vez</li>
+<li>Comparações públicas: rankings expostos, "hall da vergonha" para os piores resultados</li>
+<li>Metas sem recursos: cobrar resultados sem dar as ferramentas necessárias</li>
+<li>Mudanças constantes: alterar metas no meio do período, mover a meta</li>
+<li>Pressão emocional: "Se não bater, vai prejudicar toda a equipe"</li>
+<li>Foco só em números: ignorar qualidade, relacionamentos e sustentabilidade</li>
+<li>Competição destrutiva: colocar colegas uns contra os outros para disputar posições</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e ter metas e ser cobrado:</strong> estabelecer objetivos claros e acompanhar resultados é parte legítima da gestão</li>
+<li><strong>Nao e exigência de qualidade:</strong> querer que o trabalho seja bem feito é diferente de pressionar com metas irrealistas</li>
+<li><strong>Nao e apenas problema de área comercial:</strong> a pressão por metas existe em todas as áreas e setores, produção, saúde, educação e serviço público incluídos</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Físicos: estresse crônico, problemas cardíacos, úlceras, insônia</li>
+<li>Mentais: ansiedade extrema, depressão, síndrome do pânico</li>
+<li>Comportamentais: comportamentos antiéticos para bater metas, omissões, distorções</li>
+<li>Relacionais: conflitos com colegas, competição destrutiva, isolamento</li>
+<li>Familiares: negligenciar família, trabalhar em horários pessoais de forma crônica</li>
+<li>Organizacionais: rotatividade alta, clima de medo, erosão dos valores</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Vendedor que tem sua remuneração variável zerada por não bater meta um mês, mesmo após anos de alto desempenho</li>
+<li>Médico em plano de saúde pressionado a limitar consultas a 7 minutos para atingir metas de produtividade</li>
+<li>Equipe cujas metas são aumentadas automaticamente sempre que são atingidas, sem limite</li>
+<li>Professor com metas de aprovação que o incentivam a aprovar alunos sem o aprendizado necessário</li>
+</ul>`,
+      impactos: `<ul>
+<li>Estresse crônico e doenças cardiovasculares associadas</li>
+<li>Burnout por pressão contínua e sem perspectiva de alívio</li>
+<li>Comportamentos antiéticos que comprometem a integridade individual e organizacional</li>
+<li>Deterioração dos relacionamentos profissionais e pessoais</li>
+<li>Alta rotatividade especialmente dos melhores profissionais</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o trabalhador:</strong> documente situações onde as metas são claramente impossíveis ou onde faltam os recursos necessários para atingi-las</li>
+<li><strong>Para o lider:</strong> estabelecer metas realistas considerando capacidade, recursos e contexto real</li>
+<li><strong>Para o lider:</strong> equilibrar cobrança com suporte, focar em desenvolvimento não apenas resultados, reconhecer esforço além dos sucessos</li>
+<li><strong>Para o lider:</strong> não romantizar sobrecarga nem elogiar quem trabalha além do saudável como modelo</li>
+<li><strong>Para a organização:</strong> rever processos de definição de metas para garantir que sejam desafiadoras mas atingíveis</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'pm-1', text: 'As metas que recebo frequentemente parecem impossíveis de atingir com os recursos disponíveis' },
+      { id: 'pm-2', text: 'A cobrança por resultados no meu trabalho gera ansiedade e medo frequentes' },
+      { id: 'pm-3', text: 'Sinto que os erros são punidos de forma desproporcional em relação aos acertos reconhecidos' },
+    ]
+  },
+  {
+    id: 'falta-seguranca-psicologica',
+    title: 'Falta de Segurança Psicológica',
+    icon: '🛡️',
+    colorClass: 'teal',
+    category: 'relacional',
+    categoryLabel: 'Relacional',
+    summary: 'Ambiente onde pessoas não se sentem seguras para expressar opiniões, cometer erros, ser vulneráveis ou mostrar sua verdadeira personalidade.',
+    tabs: {
+      conceito: `<p>A falta de segurança psicológica ocorre em ambientes onde as pessoas não se sentem seguras para expressar opiniões, cometer erros, ser vulneráveis ou mostrar sua verdadeira personalidade, por medo de julgamento, punição ou exclusão.</p>
+<p>O conceito de segurança psicológica foi popularizado pela pesquisadora Amy Edmondson, da Harvard Business School, e é hoje reconhecido como um dos fatores mais importantes para o desempenho e a saúde das equipes. Sem ela, as pessoas se calam, se conformam e se protegem, em vez de contribuir com o melhor de si.</p>`,
+      o_que_e: `<ul>
+<li>Medo de errar: punições severas por erros, não permitir experimentação ou aprendizado pela tentativa</li>
+<li>Não poder discordar: "Aqui não se questiona", "Faça e não reclame"</li>
+<li>Julgamento constante: críticas pessoais, ironias, sarcasmo em resposta a contribuições</li>
+<li>Perfeccionismo tóxico: "Tem que ser perfeito", "Erro não é opção"</li>
+<li>Exclusão por diferenças: não aceitar estilos diferentes, pouca tolerância à diversidade</li>
+<li>Reuniões tensas: ambiente de medo onde as pessoas não falam mesmo quando têm algo a dizer</li>
+<li>Retaliação: punir quem dá feedback negativo ou faz sugestões de melhoria</li>
+<li>Cultura do culpado: sempre procurar quem errou para punir em vez de aprender com o erro</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e ausência de responsabilidade:</strong> segurança psicológica não significa que erros não tenham consequências, mas que as pessoas não sejam punidas por tentar e por ser honestas</li>
+<li><strong>Nao e concordância obrigatória:</strong> ambientes seguros são justamente aqueles onde discordâncias podem ser expressas com respeito</li>
+<li><strong>Nao e apenas responsabilidade do lider:</strong> toda a equipe contribui para criar ou destruir a segurança psicológica do grupo</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Comunicacionais: silêncio em reuniões, não compartilhar ideias, concordar sempre mesmo discordando internamente</li>
+<li>Inovativos: falta de criatividade, não sugerir melhorias, conformismo crescente</li>
+<li>Relacionais: relacionamentos superficiais, não confiar nos colegas o suficiente para ser vulnerável</li>
+<li>Emocionais: ansiedade, estresse, sensação de estar sempre sendo avaliado e julgado</li>
+<li>Comportamentais: evitar riscos, não tomar iniciativa, fazer apenas o mínimo seguro</li>
+<li>Organizacionais: perda de inovação, problemas não reportados, estagnação do time</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Equipe onde ninguém faz perguntas em reuniões porque fazê-las seria interpretado como incompetência</li>
+<li>Ambiente onde reportar um problema é mais arriscado do que escondê-lo, por medo de ser responsabilizado</li>
+<li>Profissional que tem uma ideia de melhoria mas não a compartilha porque a última vez que fez isso foi ridicularizado</li>
+<li>Time que concorda unanimemente com o gestor em público mas tem opiniões completamente diferentes em particular</li>
+</ul>`,
+      impactos: `<ul>
+<li>Perda de inovação e criatividade coletiva</li>
+<li>Problemas reais que não são reportados até se tornarem crises</li>
+<li>Ansiedade e estresse crônico pelo esforço constante de se proteger</li>
+<li>Conformismo que leva à estagnação individual e coletiva</li>
+<li>Alta rotatividade de pessoas que buscam ambientes onde possam contribuir de verdade</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o lider:</strong> normalizar erros tratando-os como oportunidades de aprendizado, admitir os próprios erros e limitações</li>
+<li><strong>Para o lider:</strong> encorajar ativamente diferentes perspectivas, fazer perguntas, receber feedback negativo com abertura genuína</li>
+<li><strong>Para o lider:</strong> não retaliar, proteger a equipe de julgamentos e críticas destrutivas</li>
+<li><strong>Para o trabalhador:</strong> praticar vulnerabilidade estratégica, começar com pequenas contribuições para construir confiança</li>
+<li><strong>Para a organização:</strong> criar rituais seguros de compartilhamento aberto onde todos tenham espaço garantido para falar</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'sp-1', text: 'Evito expressar opiniões contrárias no trabalho por medo das consequências' },
+      { id: 'sp-2', text: 'No meu ambiente, cometer erros é punido em vez de tratado como aprendizado' },
+      { id: 'sp-3', text: 'Me sinto julgado(a) quando faço perguntas ou admito que não sei algo' },
+    ]
+  },
+  {
+    id: 'conflitos-comunicacao',
+    title: 'Conflitos Interpessoais e Comunicação Falha',
+    icon: '💬',
+    colorClass: 'purple',
+    category: 'relacional',
+    categoryLabel: 'Relacional',
+    summary: 'Problemas na comunicação entre pessoas, incluindo conflitos não resolvidos, mal-entendidos frequentes e comunicação agressiva ou passiva-agressiva.',
+    tabs: {
+      conceito: `<p>Os conflitos interpessoais e a comunicação falha englobam problemas na comunicação entre pessoas no ambiente de trabalho. Incluem conflitos não resolvidos, mal-entendidos frequentes, comunicação agressiva ou passiva-agressiva, e falta de habilidades para o diálogo construtivo.</p>
+<p>A comunicação é o tecido conjuntivo de qualquer organização. Quando ela é consistentemente falha, o impacto vai além do desconforto pessoal: projetos atrasam, decisões são mal implementadas, relacionamentos se deterioram e o custo humano e financeiro é significativo.</p>`,
+      o_que_e: `<ul>
+<li>Comunicação agressiva: gritos, xingamentos, tom ameaçador nas interações cotidianas</li>
+<li>Passivo-agressividade: ironias, sarcasmo, "fazer corpo mole" como forma de resistência</li>
+<li>Mal-entendidos constantes: informações distorcidas, interpretações erradas por falta de clareza</li>
+<li>Conflitos não resolvidos: tensões antigas que nunca foram tratadas e continuam afetando a equipe</li>
+<li>Falta de clareza: instruções confusas, expectativas não definidas, responsabilidades sobrepostas</li>
+<li>Comunicação unilateral: só falar, não escutar, interromper sempre</li>
+<li>Fofocas e rumores: comunicação indireta, "telefone sem fio" como forma principal de informação</li>
+<li>Canais inadequados: discutir assuntos sérios por WhatsApp, e-mail ou mensagem quando precisaria de conversa direta</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e discordância normal:</strong> pessoas com perspectivas diferentes que discordam respeitosamente estão se comunicando bem, não mal</li>
+<li><strong>Nao e apenas problema de personalidade:</strong> comunicação falha frequentemente reflete estruturas e culturas organizacionais, não apenas características individuais</li>
+<li><strong>Nao e resolvido apenas com treinamento:</strong> habilidades de comunicação precisam de prática no dia a dia, não apenas de cursos</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Relacionais: tensões constantes, evitar certas pessoas, isolamento progressivo</li>
+<li>Produtivos: retrabalho por mal-entendidos, projetos que não avançam por falta de alinhamento</li>
+<li>Emocionais: estresse, frustração, ansiedade antes de interações com certas pessoas</li>
+<li>Colaborativos: falta de trabalho em equipe, competição destrutiva, informações que não fluem</li>
+<li>Organizacionais: clima tenso, decisões ruins por falta de informação completa</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Gestor que comunica mudanças importantes por mensagem de texto de uma linha, sem contexto ou espaço para perguntas</li>
+<li>Equipe com conflito antigo entre dois membros que nunca foi mediado e hoje contamina toda a dinâmica do grupo</li>
+<li>Profissional que recebe instruções contraditórias de dois gestores diferentes e não tem canal seguro para resolver o impasse</li>
+<li>Ambiente onde as pessoas evitam conversas difíceis e os problemas só vêm à tona quando já viraram crises</li>
+</ul>`,
+      impactos: `<ul>
+<li>Estresse interpessoal crônico por exposição a comunicação hostil ou confusa</li>
+<li>Ansiedade social relacionada a interações no trabalho</li>
+<li>Erros e retrabalho com custos reais para a organização</li>
+<li>Deterioração do clima organizacional de forma progressiva</li>
+<li>Afastamentos por conflitos não resolvidos que escalam para situações de assédio</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o trabalhador:</strong> escolha o canal certo para cada conversa, assuntos sensíveis merecem conversa direta, não mensagem</li>
+<li><strong>Para o lider:</strong> mediar conflitos rapidamente, facilitar conversas difíceis entre membros da equipe</li>
+<li><strong>Para o lider:</strong> dar exemplo de comunicação clara e respeitosa, escutar ativamente demonstrando como ouvir com atenção</li>
+<li><strong>Para o lider:</strong> estabelecer regras claras de comunicação respeitosa e aplicá-las consistentemente</li>
+<li><strong>Para a organização:</strong> criar canais adequados para diferentes tipos de comunicação e treinar a equipe no uso de cada um</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'cc-1', text: 'Com frequência recebo informações confusas ou contraditórias sobre meu trabalho' },
+      { id: 'cc-2', text: 'Existem conflitos não resolvidos na minha equipe que afetam o trabalho do dia a dia' },
+      { id: 'cc-3', text: 'A comunicação no meu ambiente de trabalho costuma ser agressiva, irônica ou passivo-agressiva' },
+    ]
+  },
+  {
+    id: 'desequilibrio-vida',
+    title: 'Desequilíbrio Vida Pessoal vs Profissional',
+    icon: '⚖️',
+    colorClass: 'amber',
+    category: 'carga',
+    categoryLabel: 'Carga e Demanda',
+    summary: 'Invasão excessiva do trabalho na vida pessoal, incluindo jornadas extensas, pressão para estar sempre disponível e dificuldade de desconectar.',
+    tabs: {
+      conceito: `<p>O desequilíbrio vida pessoal versus profissional ocorre quando o trabalho invade excessivamente a vida pessoal. Inclui jornadas extensas, trabalho em horários pessoais, pressão para estar sempre disponível e dificuldade para desconectar e ter tempo para família, lazer e autocuidado.</p>
+<p>Com o avanço da tecnologia e do trabalho remoto, as fronteiras entre trabalho e vida pessoal tornaram-se cada vez mais porosas. A NR-1 reconhece esse conflito como risco psicossocial porque seus impactos na saúde são bem documentados e frequentemente resultam de escolhas organizacionais, não apenas de dificuldades individuais de gestão do tempo.</p>`,
+      o_que_e: `<ul>
+<li>Jornadas extensas: trabalhar mais de 12 horas regularmente, não ter horário para sair</li>
+<li>Trabalho invadindo casa: e-mails à noite, ligações nos fins de semana como rotina</li>
+<li>Disponibilidade 24 horas: "Preciso que esteja sempre disponível"</li>
+<li>Férias interrompidas: trabalhar durante férias, não conseguir desconectar mesmo em descanso formal</li>
+<li>Eventos perdidos: faltar a aniversários, formaturas, momentos importantes em função de demandas do trabalho</li>
+<li>Pressão social: "Quem não fica até tarde não é comprometido"</li>
+<li>Culpa por limites: sentir-se mal por não responder mensagens imediatamente fora do horário</li>
+<li>Saúde negligenciada: não ter tempo para exercícios, consultas médicas, alimentação adequada</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e fraqueza ou falta de comprometimento:</strong> querer ter vida pessoal saudável não torna o trabalhador menos profissional</li>
+<li><strong>Nao e problema apenas de mães:</strong> o desequilíbrio afeta pessoas de todos os gêneros, embora as mulheres ainda carreguem desproporcionalmente o peso do trabalho doméstico</li>
+<li><strong>Nao e resolvido apenas com home office:</strong> trabalhar de casa sem limites claros frequentemente intensifica o conflito</li>
+<li><strong>Nao e falta de organização pessoal:</strong> quando a estrutura da organização não permite equilíbrio, a gestão pessoal do tempo tem limite</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Físicos: exaustão, problemas de saúde, ganho ou perda de peso significativos</li>
+<li>Familiares: conflitos conjugais, filhos distantes, isolamento social progressivo</li>
+<li>Emocionais: culpa constante, ansiedade, sensação de estar perdendo a própria vida</li>
+<li>Mentais: dificuldade para relaxar, pensamentos obsessivos sobre trabalho mesmo em momentos de lazer</li>
+<li>Sociais: perda de amizades, não participar de atividades sociais importantes</li>
+<li>Pessoais: perda de identidade, não saber quem se é além do papel profissional</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Gerente que perdeu a apresentação do filho na escola pela terceira vez seguida por não conseguir sair antes das 21h</li>
+<li>Trabalhador remoto que responde e-mails do escritório às 11h da noite porque a fronteira entre casa e trabalho desapareceu</li>
+<li>Profissional que não tira férias há 3 anos porque "não tem como" e nem percebe mais o quanto isso o afetou</li>
+<li>Membro de equipe que sente culpa genuína por não responder uma mensagem do chefe enviada no domingo à tarde</li>
+</ul>`,
+      impactos: `<ul>
+<li>Estresse crônico e burnout por ausência de recuperação real</li>
+<li>Comprometimento da qualidade dos relacionamentos afetivos</li>
+<li>Depressão e ansiedade</li>
+<li>Doenças psicossomáticas: gastrite, enxaqueca, tensão muscular crônica</li>
+<li>Impacto no desenvolvimento dos filhos pela ausência crônica do responsável</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o trabalhador:</strong> estabeleça limites explícitos e comunique-os claramente, defina horários de disponibilidade e cumpra-os</li>
+<li><strong>Para o trabalhador:</strong> conheça seus direitos: a CLT limita a jornada e há jurisprudência sobre sobreaviso digital</li>
+<li><strong>Para o lider:</strong> respeitar horários e não enviar mensagens fora do expediente, dar exemplo tendo equilíbrio próprio</li>
+<li><strong>Para o lider:</strong> incentivar descanso, promover férias e não romantizar sobrecarga elogiando quem trabalha em excesso</li>
+<li><strong>Para a organização:</strong> implementar política real de desconexão digital, não apenas declarativa</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'dv-1', text: 'O trabalho me impede regularmente de participar de momentos importantes com minha família ou amigos' },
+      { id: 'dv-2', text: 'Tenho dificuldade de "desligar" do trabalho mesmo nos momentos de descanso' },
+      { id: 'dv-3', text: 'Sinto culpa quando não estou disponível para o trabalho fora do horário' },
+    ]
+  },
+  {
+    id: 'qualidade-lideranca',
+    title: 'Qualidade da Liderança',
+    icon: '👁️',
+    colorClass: 'teal',
+    category: 'organizacional',
+    categoryLabel: 'Organizacional',
+    summary: 'Competência, estilo e comportamento dos lideres, incluindo habilidades de gestão de pessoas, consistência entre discurso e prática e impacto direto na saúde mental da equipe.',
+    tabs: {
+      conceito: `<p>A qualidade da liderança refere-se à competência, ao estilo e ao comportamento dos lideres, incluindo suas habilidades de gestão de pessoas, capacidade de inspirar e desenvolver, consistência entre discurso e prática, e o impacto direto que exercem sobre a saúde mental da equipe.</p>
+<p>Pesquisas consistentemente mostram que as pessoas não abandonam empresas: elas abandonam lideres. A liderança é o fator psicossocial com maior poder de ampliação ou mitigação de todos os outros riscos. Um bom lider pode proteger sua equipe mesmo em ambientes organizacionais difíceis. Um lider inadequado pode destruir um ambiente organizacional saudável.</p>`,
+      o_que_e: `<ul>
+<li>Liderança autoritária: "Faça porque eu mandei", não aceitar questionamentos legítimos</li>
+<li>Liderança ausente: não dar direção, não estar disponível quando a equipe precisa</li>
+<li>Inconsistência: mudar de opinião constantemente, não ter critérios claros e previsíveis</li>
+<li>Falta de desenvolvimento: não investir no crescimento da equipe</li>
+<li>Favoritismo: tratar pessoas de forma diferente sem critério justo e transparente</li>
+<li>Falta de empatia: não considerar sentimentos e necessidades da equipe</li>
+<li>Comunicação inadequada: ser confuso, agressivo ou distante na comunicação</li>
+<li>Não dar feedback: deixar pessoas sem saber como estão se saindo</li>
+<li>Modelo negativo: ter comportamentos que não gostaria de ver na equipe</li>
+</ul>`,
+      o_que_nao_e: `<ul>
+<li><strong>Nao e apenas estilo pessoal:</strong> a qualidade da liderança tem impacto mensurável na saúde e no desempenho da equipe, não é apenas questão de preferência</li>
+<li><strong>Nao e perfeição:</strong> nenhum lider é perfeito, o que importa é a consciência sobre o impacto e o compromisso com o desenvolvimento</li>
+<li><strong>Nao e exclusivo de grandes lideranças:</strong> coordenadores, supervisores e líderes informais também exercem impacto psicossocial significativo sobre quem está ao redor</li>
+</ul>`,
+      como_se_manifesta: `<ul>
+<li>Motivacionais: desmotivação generalizada, falta de engajamento na equipe</li>
+<li>Desenvolvimento: estagnação profissional, falta de crescimento, sensação de não aprender nada</li>
+<li>Relacionais: desconfiança, medo, relacionamentos superficiais por falta de segurança</li>
+<li>Produtivos: baixa performance, falta de iniciativa, erros frequentes</li>
+<li>Emocionais: estresse, ansiedade, frustração com a liderança que não se resolve</li>
+<li>Organizacionais: alta rotatividade, dificuldade para reter talentos, clima progressivamente pior</li>
+</ul>`,
+      exemplos: `<ul>
+<li>Gestor que promete promoções e desenvolvimento há dois anos sem nunca cumprir, erodindo a confiança da equipe</li>
+<li>Lider que tem um comportamento em público (respeitoso e colaborativo) e outro em privado (agressivo e hostil)</li>
+<li>Coordenador que nunca dá feedback à equipe: as pessoas trabalham sem saber se estão no caminho certo</li>
+<li>Gerente que trata visivelmente os favoritos com condições melhores sem nenhum critério de mérito transparente</li>
+</ul>`,
+      impactos: `<ul>
+<li>Desmotivação e desengajamento que se espalha para toda a equipe</li>
+<li>Alta rotatividade com perda de conhecimento institucional acumulado</li>
+<li>Amplificação de todos os outros riscos psicossociais presentes no ambiente</li>
+<li>Estresse e ansiedade crônicos pela imprevisibilidade e inconsistência do lider</li>
+<li>Comprometimento da saúde mental coletiva da equipe</li>
+</ul>`,
+      o_que_fazer: `<ul>
+<li><strong>Para o lider:</strong> buscar autoconhecimento, conhecer os próprios pontos fortes e fracos e seu impacto sobre as pessoas</li>
+<li><strong>Para o lider:</strong> buscar feedback 360 graus da equipe sobre sua liderança e ser aberto a ouvir o que é difícil</li>
+<li><strong>Para o lider:</strong> alinhar discurso e prática, ser previsível nos critérios e ter empatia pelo impacto das próprias ações</li>
+<li><strong>Para o trabalhador:</strong> comunique ao lider de forma respeitosa quando algum comportamento está impactando seu trabalho</li>
+<li><strong>Para a organização:</strong> investir no desenvolvimento contínuo de lideranças, não apenas em habilidades técnicas mas em competências humanas</li>
+</ul>`
+    },
+    checklistItems: [
+      { id: 'ql-1', text: 'Meu lider é inconsistente: muda de critérios com frequência sem explicação' },
+      { id: 'ql-2', text: 'Raramente recebo orientação ou feedback do meu lider sobre meu desenvolvimento' },
+      { id: 'ql-3', text: 'O comportamento do meu lider gera medo ou insegurança na equipe' },
     ]
   }
 ];
@@ -632,186 +639,185 @@ const TAB_LABELS = {
 const QUIZ_DATA = [
   {
     id: 'q1',
-    riskId: 'excesso-demandas',
-    question: 'Qual é a principal característica que diferencia o excesso de demandas de um período pontual de muito trabalho?',
+    riskId: 'assedio-moral-sexual',
+    question: 'Qual das situações abaixo configura assédio moral no trabalho?',
     options: [
-      { text: 'A quantidade de tarefas por dia', correct: false },
-      { text: 'A cronicidade — a sobrecarga deixa de ser exceção e passa a ser regra', correct: true },
-      { text: 'O nível de dificuldade das tarefas', correct: false },
-      { text: 'A falta de organização pessoal do trabalhador', correct: false }
+      { text: 'Gestor que dá feedback crítico sobre uma entrega com prazo perdido', correct: false },
+      { text: 'Colega que sistematicamente exclui uma pessoa de comunicações importantes e atribui seus méritos a si mesmo', correct: true },
+      { text: 'Empresa que aumenta metas no início do ano', correct: false },
+      { text: 'Líder que aplica advertência formal após três erros do mesmo tipo', correct: false }
     ],
-    explanation: 'A cronicidade é o elemento definidor. Qualquer profissional pode ter semanas intensas — isso é normal. O risco psicossocial surge quando a sobrecarga se torna o estado permanente, sem perspectiva de alívio, comprometendo a saúde ao longo do tempo.'
+    explanation: 'O assédio moral se caracteriza por comportamentos abusivos repetidos que degradam a dignidade. Excluir sistematicamente alguém e roubar seus méritos é assédio. Feedback crítico, metas e advertências formais são instrumentos legítimos de gestão quando feitos com respeito.'
   },
   {
     id: 'q2',
-    riskId: 'falta-controle',
-    question: 'Segundo o modelo de Demanda-Controle de Karasek, qual combinação representa o maior risco para doenças relacionadas ao trabalho?',
+    riskId: 'carga-excessiva',
+    question: 'O que diferencia a Carga Excessiva de Trabalho como risco psicossocial de um período normal de muito trabalho?',
     options: [
-      { text: 'Baixa demanda e baixo controle', correct: false },
-      { text: 'Alta demanda e alto controle', correct: false },
-      { text: 'Alta demanda e baixo controle', correct: true },
-      { text: 'Baixa demanda e alto controle', correct: false }
+      { text: 'A quantidade de horas trabalhadas em um único dia', correct: false },
+      { text: 'A cronicidade: a sobrecarga deixa de ser exceção e se torna o estado permanente', correct: true },
+      { text: 'O nível de dificuldade das tarefas realizadas', correct: false },
+      { text: 'A falta de organização pessoal do trabalhador', correct: false }
     ],
-    explanation: 'Alta demanda com baixo controle é a combinação mais nociva: o trabalhador enfrenta muitas exigências sem poder adaptar sua resposta a elas. O controle funciona como fator protetor — quando existe, permite que a pessoa gerencie ativamente o estresse.'
+    explanation: 'A cronicidade é o elemento central. Qualquer profissional pode ter semanas intensas, isso é normal. O risco psicossocial surge quando a sobrecarga se torna o estado permanente, sem perspectiva de alívio, comprometendo a saúde ao longo do tempo.'
   },
   {
     id: 'q3',
-    riskId: 'assedio-moral',
-    question: 'Um gestor dá uma avaliação de desempenho severa a um funcionário, listando falhas específicas e estabelecendo prazo para melhoria. Isso é assédio moral?',
+    riskId: 'falta-reconhecimento',
+    question: 'Um profissional bem remunerado começa a questionar o sentido do que faz, sente tédio crônico e pensa em mudar de carreira. Qual fator de risco melhor descreve essa situação?',
     options: [
-      { text: 'Sim, qualquer feedback negativo é assédio', correct: false },
-      { text: 'Depende — se for feito com respeito e propósito construtivo, não é assédio', correct: true },
-      { text: 'Sim, porque causa sofrimento ao trabalhador', correct: false },
-      { text: 'Não, gestores nunca praticam assédio', correct: false }
+      { text: 'Carga Excessiva de Trabalho', correct: false },
+      { text: 'Falta de Reconhecimento', correct: true },
+      { text: 'Pressão Excessiva por Metas', correct: false },
+      { text: 'Desequilíbrio Vida Pessoal vs Profissional', correct: false }
     ],
-    explanation: 'Assédio moral exige repetição, intencionalidade e degradação da dignidade. Feedback crítico, mesmo que difícil de ouvir, é parte legítima da gestão quando feito com respeito e finalidade construtiva. O limite está na humilhação, no rebaixamento e na repetição sistemática abusiva.'
+    explanation: 'A Falta de Reconhecimento é independente da remuneração. Quando o trabalho não oferece visibilidade das contribuições, crescimento ou propósito, o adoecimento psicológico pode ocorrer mesmo com excelentes condições materiais. Salário não substitui sentido e reconhecimento genuíno.'
   },
   {
     id: 'q4',
-    riskId: 'trabalho-emocional',
-    question: 'O conceito de "dissonância emocional" no trabalho emocional refere-se a:',
+    riskId: 'clima-organizacional-negativo',
+    question: 'Qual das características abaixo é típica de um Clima Organizacional Negativo?',
     options: [
-      { text: 'Discutir com clientes agressivos', correct: false },
-      { text: 'Sentir emoções muito intensas no trabalho', correct: false },
-      { text: 'Sentir uma emoção internamente e ter que demonstrar outra externamente por exigência do trabalho', correct: true },
-      { text: 'Não conseguir sentir emoções no trabalho', correct: false }
+      { text: 'Pessoas que discordam abertamente em reuniões com argumentos respeitosos', correct: false },
+      { text: 'Processos de avaliação de desempenho com critérios claros', correct: false },
+      { text: 'Cinismo generalizado e informações retidas como vantagem competitiva entre colegas', correct: true },
+      { text: 'Metas desafiadoras com prazos definidos', correct: false }
     ],
-    explanation: 'Dissonância emocional é o conflito entre o que se sente de verdade e o que precisa ser demonstrado. Uma atendente que acabou de ser xingada e precisa imediatamente sorrir para o próximo cliente experimenta dissonância emocional. Quando crônica, essa dissonância é um dos principais mecanismos que levam ao burnout.'
+    explanation: 'O Clima Organizacional Negativo é caracterizado por desconfiança, competição destrutiva e comunicação tóxica. Quando colegas retêm informações como vantagem e o cinismo é generalizado, o tecido social da organização está comprometido. Discordância respeitosa, avaliações claras e metas são elementos saudáveis.'
   },
   {
     id: 'q5',
-    riskId: 'inseguranca-trabalho',
-    question: 'A insegurança no trabalho pode causar adoecimento mesmo quando a ameaça de demissão é percebida mas não real. Por quê?',
+    riskId: 'falta-autonomia',
+    question: 'Por que o microgerenciamento é considerado um fator de risco psicossocial?',
     options: [
-      { text: 'Porque trabalhadores ansiosos exageram os riscos', correct: false },
-      { text: 'Porque o organismo responde ao que é percebido como ameaça, não apenas ao que é objetivamente real', correct: true },
-      { text: 'Porque pessoas inseguras têm pior desempenho e acabam sendo demitidas de fato', correct: false },
-      { text: 'Isso não é verdade — só causa impacto quando a demissão acontece de fato', correct: false }
+      { text: 'Porque aumenta a quantidade de trabalho do gestor', correct: false },
+      { text: 'Porque remove a autonomia do trabalhador, gerando impotência e desmotivação crônica', correct: true },
+      { text: 'Porque garante que os erros sejam detectados mais rapidamente', correct: false },
+      { text: 'Porque é sempre uma forma de assédio moral', correct: false }
     ],
-    explanation: 'O sistema de resposta ao estresse do organismo não distingue ameaças percebidas de ameaças reais. A antecipação de uma perda ativa os mesmos mecanismos fisiológicos que a perda em si. É por isso que a incerteza prolongada — mesmo sem evento concreto — produz adoecimento real.'
+    explanation: 'O microgerenciamento mina o controle que o trabalhador tem sobre seu próprio trabalho, um fator protetor fundamental para a saúde mental. Profissionais competentes que não podem usar seu julgamento experimentam impotência aprendida, perda de confiança e desengajamento progressivo.'
   },
   {
     id: 'q6',
-    riskId: 'conflito-familia',
-    question: 'Qual lei brasileira estabelece proteções relacionadas ao direito à desconexão digital e ao assédio no trabalho?',
+    riskId: 'pressao-metas',
+    question: 'Qual das situações abaixo NÃO configura o fator de risco "Pressão Excessiva por Metas"?',
     options: [
-      { text: 'Lei 13.467/2017 (Reforma Trabalhista)', correct: false },
-      { text: 'Lei 14.457/2022', correct: true },
-      { text: 'Lei 9.503/1997 (Código de Trânsito)', correct: false },
-      { text: 'Lei 8.213/1991 (Benefícios da Previdência)', correct: false }
+      { text: 'Metas que são automaticamente aumentadas sempre que são atingidas, sem limite', correct: false },
+      { text: 'Demissão imediata por não bater meta em um único mês após anos de alto desempenho', correct: false },
+      { text: 'Gestor que acompanha semanalmente os resultados e dá feedback sobre o progresso', correct: true },
+      { text: 'Ranking público dos piores resultados individuais como "incentivo"', correct: false }
     ],
-    explanation: 'A Lei 14.457/2022 (Programa Emprega + Mulheres) ampliou obrigações das empresas com CIPA, incluindo canais de denúncia de assédio e medidas de equilíbrio trabalho-família. Junto com a Portaria MTE 1.419/2024 que atualizou a NR-1, forma o marco regulatório atual dos riscos psicossociais no Brasil.'
+    explanation: 'Acompanhar resultados e dar feedback sobre progresso é gestão legítima e saudável. O risco está na desproporcionalidade: metas que crescem sem limite, punições severas por uma falha isolada e exposição pública humilhante são práticas que comprometem a saúde mental.'
   },
   {
     id: 'q7',
-    riskId: 'suporte-social',
-    question: 'O suporte social no trabalho funciona como "amortecedor" do estresse. Isso significa que:',
+    riskId: 'falta-seguranca-psicologica',
+    question: 'Em um ambiente com Falta de Segurança Psicológica, o que normalmente acontece quando alguém tem uma ideia de melhoria?',
     options: [
-      { text: 'Elimina completamente o estresse ocupacional', correct: false },
-      { text: 'Reduz a percepção dos riscos psicossociais existentes', correct: false },
-      { text: 'Reduz o impacto negativo dos estressores sobre a saúde do trabalhador', correct: true },
-      { text: 'Torna os trabalhadores insensíveis às pressões do trabalho', correct: false }
+      { text: 'A ideia é debatida abertamente com críticas construtivas', correct: false },
+      { text: 'A pessoa não compartilha a ideia por medo de ser ridicularizada ou punida', correct: true },
+      { text: 'A ideia é registrada formalmente no sistema de sugestões', correct: false },
+      { text: 'O gestor pede que a pessoa desenvolva a proposta em detalhes', correct: false }
     ],
-    explanation: 'O efeito amortecedor (buffering effect) do suporte social não elimina os problemas, mas ajuda os trabalhadores a lidar melhor com eles. Pessoas com bom suporte social adoecem menos diante das mesmas pressões de trabalho do que pessoas que as enfrentam sozinhas.'
+    explanation: 'A Falta de Segurança Psicológica leva ao silêncio e ao conformismo. Quando as pessoas já experimentaram rejeição ou punição por contribuir, elas param de tentar. O resultado é uma organização que perde as ideias mais valiosas justamente das pessoas que mais pensam sobre como melhorá-la.'
   },
   {
     id: 'q8',
-    riskId: 'falta-significado',
-    question: 'Um trabalhador muito bem remunerado começa a questionar o sentido do que faz, sente tédio crônico e pensa em mudar de carreira. Qual risco psicossocial melhor descreve essa situação?',
+    riskId: 'conflitos-comunicacao',
+    question: 'Um gestor envia uma mensagem de texto de uma linha comunicando uma mudança importante de processo. Isso é um exemplo de:',
     options: [
-      { text: 'Excesso de demandas — o trabalho está fácil demais', correct: false },
-      { text: 'Falta de significado e reconhecimento no trabalho', correct: true },
-      { text: 'Insegurança no trabalho — está pensando em sair', correct: false },
-      { text: 'Conflito trabalho-família — quer mais tempo livre', correct: false }
+      { text: 'Boa comunicação: objetiva e direta', correct: false },
+      { text: 'Canal inadequado: assuntos importantes merecem contexto e espaço para perguntas', correct: true },
+      { text: 'Falta de Autonomia: o gestor deveria consultar a equipe antes', correct: false },
+      { text: 'Pressão por Metas: o gestor está com pressa', correct: false }
     ],
-    explanation: 'A falta de significado é um risco independente da remuneração. Quando o trabalho não oferece propósito, desafio ou visibilidade do impacto das próprias contribuições, o adoecimento psicológico pode ocorrer mesmo com excelentes condições materiais. Salário não substitui sentido.'
+    explanation: 'O canal inadequado é um dos fatores do risco "Conflitos Interpessoais e Comunicação Falha". Comunicações importantes precisam do canal certo: contexto suficiente, espaço para dúvidas e tom adequado. Uma mensagem de texto de uma linha cria mal-entendidos, gera ansiedade e demonstra descuido com o impacto nas pessoas.'
   },
   {
     id: 'q9',
-    riskId: 'discriminacao',
-    question: 'A discriminação no trabalho pode ser "inconsciente" ou "estrutural". Isso significa que:',
+    riskId: 'desequilibrio-vida',
+    question: 'Por que o trabalho remoto pode INTENSIFICAR o risco de Desequilíbrio Vida Pessoal vs Profissional?',
     options: [
-      { text: 'Não causa dano real pois não é intencional', correct: false },
-      { text: 'Só conta juridicamente se houver intenção comprovada', correct: false },
-      { text: 'Pode existir sem que a pessoa que discrimina tenha consciência disso, mas ainda assim causa impacto real na vítima', correct: true },
-      { text: 'É mais grave do que a discriminação explícita', correct: false }
+      { text: 'Porque as pessoas ficam mais preguiçosas em casa', correct: false },
+      { text: 'Porque elimina as fronteiras físicas entre trabalho e vida pessoal, tornando a desconexão mais difícil', correct: true },
+      { text: 'Porque reduz o contato com colegas e aumenta a solidão', correct: false },
+      { text: 'Porque as pessoas trabalham menos horas em home office', correct: false }
     ],
-    explanation: 'Vieses inconscientes são atitudes automáticas formadas por experiências e contexto cultural que afetam decisões mesmo sem intenção. A pesquisa mostra que curriculos com nomes "negros" recebem menos respostas do que os mesmos currículos com nomes "brancos" — sem que o recrutador perceba a discriminação. O impacto para a vítima é real independentemente da intenção.'
+    explanation: 'O trabalho remoto sem estrutura adequada pode piorar o desequilíbrio porque a casa vira escritório, o escritório vira casa, e a fronteira que permitia desconectar desaparece. Pesquisas mostram que muitos trabalhadores remotos trabalham mais horas, não menos, justamente pela dificuldade de "fechar o escritório".'
   },
   {
     id: 'q10',
-    riskId: 'condicoes-fisicas',
-    question: 'Por que condições físicas inadequadas de trabalho são classificadas como risco PSICOSSOCIAL e não apenas físico?',
+    riskId: 'qualidade-lideranca',
+    question: 'Por que a Qualidade da Liderança é considerada o fator de risco psicossocial com maior poder de impacto sobre os outros?',
     options: [
-      { text: 'Porque só afetam a mente, não o corpo', correct: false },
-      { text: 'Porque o estressor ambiental ativa respostas de estresse psicológico crônico que levam ao adoecimento mental', correct: true },
-      { text: 'Porque são apenas desconforto sem consequência real', correct: false },
-      { text: 'Porque a NR-1 classifica tudo como psicossocial por conveniência burocrática', correct: false }
+      { text: 'Porque líderes têm mais responsabilidades do que os demais', correct: false },
+      { text: 'Porque o líder pode amplificar ou mitigar todos os outros riscos psicossociais pela forma como age', correct: true },
+      { text: 'Porque líderes ganham mais e têm mais influência política', correct: false },
+      { text: 'Porque é o fator mais fácil de medir e corrigir', correct: false }
     ],
-    explanation: 'Condições físicas adversas persistentes são processadas pelo sistema nervoso como ameaça contínua, ativando o eixo do estresse. Quando cronicizado, esse estado de ativação prejudica a saúde mental. Além disso, condições precárias comunicam desvalorização ao trabalhador, gerando impacto psicológico adicional.'
+    explanation: 'Um bom líder pode proteger sua equipe mesmo em ambientes organizacionais difíceis: filtrando pressões excessivas, dando reconhecimento, criando segurança psicológica e comunicando bem. Um líder inadequado faz o oposto: amplifica todos os riscos existentes. É por isso que "as pessoas não abandonam empresas, elas abandonam líderes".'
   },
   {
     id: 'q11',
-    riskId: 'excesso-demandas',
-    question: 'Qual das situações abaixo NÃO configura excesso de demandas como risco psicossocial?',
+    riskId: 'assedio-moral-sexual',
+    question: 'O termo "gaslighting" no contexto de assédio moral refere-se a:',
     options: [
-      { text: 'Cobertura permanente das funções de dois colegas demitidos há seis meses', correct: false },
-      { text: 'Uma semana intensa de trabalho para cumprir prazo de projeto importante', correct: true },
-      { text: 'Expectativa de responder mensagens de trabalho nos fins de semana', correct: false },
-      { text: 'Metas estabelecidas sem consulta sobre viabilidade com a equipe executora', correct: false }
+      { text: 'Pressão para trabalhar mais horas do que o contratado', correct: false },
+      { text: 'Manipulação em que o agressor nega ou distorce eventos fazendo a vítima questionar sua própria percepção', correct: true },
+      { text: 'Assédio praticado por mensagens digitais fora do horário', correct: false },
+      { text: 'Discriminação baseada em gênero no ambiente de trabalho', correct: false }
     ],
-    explanation: 'Períodos pontuais de alta demanda são parte normal do trabalho e não configuram risco psicossocial. O risco surge com a cronicidade — quando a sobrecarga se torna o estado permanente. Uma semana intensa seguida de normalização é diferente de semanas intensas que nunca terminam.'
+    explanation: 'Gaslighting é uma forma de manipulação psicológica frequente em situações de assédio moral. O agressor sistematicamente nega que os episódios aconteceram, minimiza sua gravidade ou culpa a vítima, fazendo-a duvidar da própria memória. Isso causa dano psicológico profundo e dificulta a denúncia.'
   },
   {
     id: 'q12',
-    riskId: 'trabalho-emocional',
-    question: 'A "fadiga compassiva" (compassion fatigue) afeta principalmente qual grupo de profissionais?',
+    riskId: 'clima-organizacional-negativo',
+    question: 'Qual é o papel do líder na reversão de um Clima Organizacional Negativo?',
     options: [
-      { text: 'Trabalhadores de linha de produção', correct: false },
-      { text: 'Profissionais que cuidam do sofrimento e das necessidades dos outros de forma contínua', correct: true },
-      { text: 'Gestores de alto escalão', correct: false },
-      { text: 'Trabalhadores autônomos sem vínculo empregatício', correct: false }
+      { text: 'Apenas identificar os funcionários que geram conflito e demiti-los', correct: false },
+      { text: 'Modelar o comportamento desejado, resolver conflitos e criar rituais positivos de forma consistente', correct: true },
+      { text: 'Contratar uma consultoria externa para fazer o diagnóstico', correct: false },
+      { text: 'Aguardar que o clima melhore naturalmente com o tempo', correct: false }
     ],
-    explanation: 'A fadiga compassiva é o esgotamento do capital empático de profissionais que, por vocação, cuidam do sofrimento alheio: médicos, enfermeiros, assistentes sociais, psicólogos, professores. A exposição contínua à dor do outro sem suporte adequado corrói progressivamente a capacidade de se importar, colocando em risco o próprio e os que cuida.'
+    explanation: 'A reversão de um clima negativo exige liderança ativa e consistente. O líder precisa modelar o comportamento que deseja ver, intervir nos conflitos, criar rituais de colaboração e celebração, e comunicar com transparência. Ações esporádicas não geram transformação; consistência é a chave.'
   },
   {
     id: 'q13',
-    riskId: 'falta-controle',
-    question: 'O microgerenciamento é prejudicial principalmente porque:',
+    riskId: 'falta-seguranca-psicologica',
+    question: 'Segurança psicológica no trabalho significa:',
     options: [
-      { text: 'Aumenta a quantidade de trabalho do gestor', correct: false },
-      { text: 'Remove a autonomia do trabalhador, gerando impotência e desmotivação', correct: true },
-      { text: 'Garante que os erros sejam detectados mais rapidamente', correct: false },
-      { text: 'É sempre uma forma de assédio moral', correct: false }
+      { text: 'Garantia de que ninguém será demitido', correct: false },
+      { text: 'Que todos concordam entre si e evitam conflitos', correct: false },
+      { text: 'Que as pessoas se sentem seguras para se expressar, errar e ser vulneráveis sem medo de punição', correct: true },
+      { text: 'Que o ambiente físico de trabalho é seguro', correct: false }
     ],
-    explanation: 'O microgerenciamento mina o controle que o trabalhador tem sobre seu próprio trabalho — um fator protetor fundamental para a saúde mental. Quando profissionais competentes não podem usar seu julgamento, experimentam impotência aprendida, perda de confiança e desengajamento progressivo.'
+    explanation: 'Segurança psicológica não é ausência de responsabilidade nem de discordância. É a crença de que o ambiente é seguro para contribuir com ideias, admitir erros e fazer perguntas sem ser punido, humilhado ou excluído. Ambientes com alta segurança psicológica têm mais inovação, colaboração e saúde mental.'
   },
   {
     id: 'q14',
-    riskId: 'suporte-social',
-    question: 'Qual das situações abaixo representa suporte social INADEQUADO no trabalho?',
+    riskId: 'carga-excessiva',
+    question: 'Quando um trabalhador nunca reclama da carga de trabalho, isso significa que:',
     options: [
-      { text: 'Gestor que dá feedback crítico sobre uma entrega', correct: false },
-      { text: 'Colega que discorda da sua abordagem em uma reunião', correct: false },
-      { text: 'Trabalhador remoto que não recebe retorno sobre seu trabalho por semanas e cujas mensagens ficam sem resposta', correct: true },
-      { text: 'Empresa que não oferece plano de saúde', correct: false }
+      { text: 'Ele está bem e não há risco de sobrecarga', correct: false },
+      { text: 'Ele pode estar em maior risco justamente por não buscar ajuda', correct: true },
+      { text: 'Ele é mais comprometido do que colegas que reclamam', correct: false },
+      { text: 'A carga de trabalho está adequada para ele', correct: false }
     ],
-    explanation: 'Suporte social inadequado não é ausência de concordância — é ausência de disponibilidade e atenção. Um trabalhador remoto sem acesso a feedback, sem retorno às comunicações e sem participação nas decisões está efetivamente isolado, mesmo que tecnicamente "na equipe". Esse isolamento amplifica todos os outros riscos psicossociais.'
+    explanation: 'Trabalhadores que nunca reclamam podem estar sobrecarregados e em maior risco por não buscar ajuda. O silêncio não é indicador de bem-estar: pode ser medo de parecer incompetente, insegurança no emprego ou simplesmente a normalização gradual da sobrecarga. Líderes precisam observar sinais além das queixas verbais.'
   },
   {
     id: 'q15',
-    riskId: 'assedio-moral',
-    question: 'Uma funcionária começa a duvidar da própria percepção das situações de abuso após o agressor consistentemente negar os eventos ou distorcer o que aconteceu. Esse fenômeno é chamado de:',
+    riskId: 'qualidade-lideranca',
+    question: 'Qual comportamento do líder melhor exemplifica o que NÃO se deve fazer para uma liderança saudável?',
     options: [
-      { text: 'Síndrome de burnout', correct: false },
-      { text: 'Dissonância cognitiva comum', correct: false },
-      { text: 'Gaslighting', correct: true },
-      { text: 'Fadiga decisória', correct: false }
+      { text: 'Admitir publicamente quando cometeu um erro', correct: false },
+      { text: 'Pedir feedback da equipe sobre sua liderança', correct: false },
+      { text: 'Ter um comportamento respeitoso em público e agressivo em conversas privadas', correct: true },
+      { text: 'Celebrar conquistas da equipe antes das próprias', correct: false }
     ],
-    explanation: 'Gaslighting é uma forma de manipulação psicológica em que o agressor nega, distorce ou minimiza sistematicamente os episódios de abuso, fazendo a vítima questionar sua própria memória e percepção. É uma característica frequente em situações de assédio moral e pode causar dano psicológico profundo, além de dificultar a denúncia.'
+    explanation: 'A inconsistência entre o comportamento público e privado é um dos traços mais destrutivos de liderança. Ela gera desconfiança, ansiedade e a sensação de que as regras não se aplicam ao líder. Admitir erros, pedir feedback e celebrar a equipe são, ao contrário, práticas que constroem segurança psicológica e confiança.'
   }
 ];
-
 // === STATE ===
 
 const state = {
